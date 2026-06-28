@@ -1,0 +1,1782 @@
+{
+  "_meta": {
+    "date": "2026-06-23",
+    "stage": "中间产物 — 噪音过滤 + concepts_all.json 匹配完成，待 LLM 分析产出最终 sub_concept",
+    "spec_ref": "specs/数据处理/02-数据加工/02-LLM加工/涨停题材分组.md",
+    "reference_coverage": {
+      "matched": 11,
+      "unmatched": 27,
+      "rate": 28.9
+    }
+  },
+  "stocks_with_concepts": [
+    {
+      "code": "002167.SZ",
+      "name": "东方锆业",
+      "concepts": [
+        "锆材料",
+        "产品涨价",
+        "固态电池",
+        "定增扩产"
+      ],
+      "primary_concept": "产品涨价",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "元器件与材料",
+            "锆材料"
+          ],
+          "note": "高纯氧化锆用于 TGV 算力基板（匹配硅芯片热膨胀系数）、半导体精密陶瓷部件（晶圆切割刀片、刻蚀机腔体）、高端 MLCC 电容（抑制高温失效），AI 算力扩容持续拉动需求"
+        },
+        {
+          "sub_concept": [
+            "AI硬件",
+            "陶瓷概念",
+            "氧化锆"
+          ],
+          "note": "高纯氧化锆用于TGV算力基板（匹配硅芯片热膨胀系数）、半导体精密陶瓷部件（晶圆切割刀片、刻蚀机腔体）、高端MLCC电容（抑制高温失效），AI算力扩容持续拉动需求"
+        }
+      ],
+      "change_rate": 9.9775,
+      "type": "涨停",
+      "first_limit_up_time": 1782177900,
+      "high_days": "3板",
+      "consecutive_boards": 3,
+      "turnover_rate": 12.925,
+      "currency_value": 14802490000.0,
+      "order_amount": 249222790.0
+    },
+    {
+      "code": "300665.SZ",
+      "name": "飞鹿股份",
+      "concepts": [
+        "控制权变更",
+        "新能源材料",
+        "防腐涂料",
+        "军工"
+      ],
+      "primary_concept": "控制权变更",
+      "real_concepts": [],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782177900,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 29.6616,
+      "currency_value": 2563808800.0,
+      "order_amount": 35736558.0
+    },
+    {
+      "code": "000566.SZ",
+      "name": "海南海药",
+      "concepts": [
+        "创新药",
+        "海南自贸区"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 9.973,
+      "type": "涨停",
+      "first_limit_up_time": 1782178326,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.1782,
+      "currency_value": 5290681400.0,
+      "order_amount": 37268821.0
+    },
+    {
+      "code": "600851.SH",
+      "name": "海欣股份",
+      "concepts": [
+        "参股长江证券",
+        "创新药",
+        "医药制造"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "医药",
+            "创新药"
+          ],
+          "note": "自主研发国家一类新药APDC（直肠癌三期临床），与上海星邦生物合作推进"
+        }
+      ],
+      "change_rate": 9.9548,
+      "type": "涨停",
+      "first_limit_up_time": 1782178383,
+      "high_days": "3板",
+      "consecutive_boards": 3,
+      "turnover_rate": 6.1855,
+      "currency_value": 7175363400.0,
+      "order_amount": 53865897.0
+    },
+    {
+      "code": "002921.SZ",
+      "name": "联诚精密",
+      "concepts": [
+        "机器人",
+        "精密机械",
+        "汽车零部件"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 10.0213,
+      "type": "涨停",
+      "first_limit_up_time": 1782178416,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.5338,
+      "currency_value": 3313832800.0,
+      "order_amount": 43787760.0
+    },
+    {
+      "code": "600172.SH",
+      "name": "黄河旋风",
+      "concepts": [
+        "培育钻石",
+        "金刚石散热",
+        "资产划转"
+      ],
+      "primary_concept": "培育钻石",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "数据中心",
+            "金刚石散热"
+          ],
+          "note": "国内最大工业金刚石生产商之一，CVD 金刚石产能领先，功能材料板块覆盖金刚石散热基板及热管理产品，受益 AI 芯片散热需求"
+        }
+      ],
+      "change_rate": 9.9935,
+      "type": "涨停",
+      "first_limit_up_time": 1782178422,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 25.5565,
+      "currency_value": 21632535000.0,
+      "order_amount": 103258383.0
+    },
+    {
+      "code": "002584.SZ",
+      "name": "西陇科学",
+      "concepts": [
+        "PCB用化学试剂",
+        "磷化工",
+        "氢氟酸"
+      ],
+      "primary_concept": "磷化工",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体材料",
+            "湿电子化学品"
+          ],
+          "note": "国内化学试剂龙头，电子化学品主要为PCB和面板级，半导体级产品处于拓展阶段，与专业半导体化学品厂商存在差距"
+        }
+      ],
+      "change_rate": 9.989,
+      "type": "涨停",
+      "first_limit_up_time": 1782178458,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 15.0714,
+      "currency_value": 4693633800.0,
+      "order_amount": 84259022.0
+    },
+    {
+      "code": "002549.SZ",
+      "name": "凯美特气",
+      "concepts": [
+        "电子特气",
+        "氦气",
+        "宜章项目试产",
+        "五氟化锑"
+      ],
+      "primary_concept": "电子特气",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体材料",
+            "电子特气"
+          ],
+          "note": "国内食品级液体二氧化碳龙头，布局电子特气（高纯二氧化碳/甲烷/氢气等），原料来自石化尾气回收，成本优势突出；电子特气业务处于早期拓展阶段"
+        }
+      ],
+      "change_rate": 10.0177,
+      "type": "涨停",
+      "first_limit_up_time": 1782178599,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.2084,
+      "currency_value": 12926352400.0,
+      "order_amount": 62539478.0
+    },
+    {
+      "code": "002453.SZ",
+      "name": "华软科技",
+      "concepts": [
+        "光刻胶基材",
+        "精细化工",
+        "收购莱恩光电"
+      ],
+      "primary_concept": "精细化工",
+      "real_concepts": [],
+      "change_rate": 9.9593,
+      "type": "涨停",
+      "first_limit_up_time": 1782178680,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.5934,
+      "currency_value": 3479179000.0,
+      "order_amount": 7607542.0
+    },
+    {
+      "code": "601011.SH",
+      "name": "宝泰隆",
+      "concepts": [
+        "焦炉烘炉",
+        "石墨烯",
+        "氢能"
+      ],
+      "primary_concept": "石墨烯",
+      "real_concepts": [],
+      "change_rate": 10.0372,
+      "type": "涨停",
+      "first_limit_up_time": 1782178871,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.2008,
+      "currency_value": 5670367000.0,
+      "order_amount": 4652528.0
+    },
+    {
+      "code": "002196.SZ",
+      "name": "方正电机",
+      "concepts": [
+        "人形机器人",
+        "新能源驱动电机"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "电机"
+          ],
+          "note": "新能源车驱动电机出货量前三，客户含蔚来/小鹏/理想，伺服电机技术向机器人关节延伸"
+        }
+      ],
+      "change_rate": 10.0158,
+      "type": "涨停",
+      "first_limit_up_time": 1782178902,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.4271,
+      "currency_value": 6813325200.0,
+      "order_amount": 93349215.0
+    },
+    {
+      "code": "002038.SZ",
+      "name": "双鹭药业",
+      "concepts": [
+        "创新药",
+        "硝酸甘油喷雾剂",
+        "化学制药"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 9.9206,
+      "type": "涨停",
+      "first_limit_up_time": 1782178938,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.2097,
+      "currency_value": 4719588700.0,
+      "order_amount": 70594381.0
+    },
+    {
+      "code": "002830.SZ",
+      "name": "名雕股份",
+      "concepts": [
+        "家装龙头",
+        "成立AI公司",
+        "高送转"
+      ],
+      "primary_concept": "高送转",
+      "real_concepts": [],
+      "change_rate": 10.031,
+      "type": "涨停",
+      "first_limit_up_time": 1782178965,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 17.2029,
+      "currency_value": 1649669100.0,
+      "order_amount": 1324220.4
+    },
+    {
+      "code": "603725.SH",
+      "name": "天安新材",
+      "concepts": [
+        "机器人",
+        "电子皮肤",
+        "高分子新材料",
+        "承诺不减持"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 9.973,
+      "type": "涨停",
+      "first_limit_up_time": 1782178974,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.5376,
+      "currency_value": 3731458000.0,
+      "order_amount": 11117592.0
+    },
+    {
+      "code": "002370.SZ",
+      "name": "亚太药业",
+      "concepts": [
+        "光动力疗法",
+        "创新药",
+        "仿制药"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 9.9593,
+      "type": "涨停",
+      "first_limit_up_time": 1782179037,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.7846,
+      "currency_value": 4034061300.0,
+      "order_amount": 63767946.0
+    },
+    {
+      "code": "600488.SH",
+      "name": "津药药业",
+      "concepts": [
+        "CPHI展会",
+        "创新药",
+        "甾体激素"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 9.9558,
+      "type": "涨停",
+      "first_limit_up_time": 1782179106,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 13.4893,
+      "currency_value": 5426676800.0,
+      "order_amount": 27453783.0
+    },
+    {
+      "code": "600719.SH",
+      "name": "大连热电",
+      "concepts": [
+        "热电联产"
+      ],
+      "primary_concept": "热电联产",
+      "real_concepts": [],
+      "change_rate": 10.0111,
+      "type": "涨停",
+      "first_limit_up_time": 1782179347,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 17.0952,
+      "currency_value": 4001490000.0,
+      "order_amount": 43116048.0
+    },
+    {
+      "code": "000813.SZ",
+      "name": "德展健康",
+      "concepts": [
+        "创新药",
+        "重组胶原蛋白",
+        "降血脂药"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782179379,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.8835,
+      "currency_value": 6688666100.0,
+      "order_amount": 30145500.0
+    },
+    {
+      "code": "300149.SZ",
+      "name": "睿智医药",
+      "concepts": [
+        "AI制药",
+        "创新药",
+        "CRO"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "医药",
+            "CXO"
+          ],
+          "note": "CRO+CDMO，化学药+生物药"
+        }
+      ],
+      "change_rate": 19.9475,
+      "type": "涨停",
+      "first_limit_up_time": 1782179424,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.941,
+      "currency_value": 4337510100.0,
+      "order_amount": 19076551.0
+    },
+    {
+      "code": "600881.SH",
+      "name": "亚泰集团",
+      "concepts": [
+        "创新药",
+        "东北证券出售"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 9.9338,
+      "type": "涨停",
+      "first_limit_up_time": 1782179539,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.9316,
+      "currency_value": 5365370600.0,
+      "order_amount": 15050272.0
+    },
+    {
+      "code": "600470.SH",
+      "name": "六国化工",
+      "concepts": [
+        "磷化工",
+        "产品涨价",
+        "精制磷酸"
+      ],
+      "primary_concept": "磷化工",
+      "real_concepts": [],
+      "change_rate": 9.9831,
+      "type": "涨停",
+      "first_limit_up_time": 1782179545,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 18.9959,
+      "currency_value": 3390400000.0,
+      "order_amount": 9746100.0
+    },
+    {
+      "code": "603466.SH",
+      "name": "风语筑",
+      "concepts": [
+        "具身智能",
+        "AI",
+        "体验经济",
+        "坏账追回"
+      ],
+      "primary_concept": "具身智能",
+      "real_concepts": [],
+      "change_rate": 9.9794,
+      "type": "涨停",
+      "first_limit_up_time": 1782179696,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.7071,
+      "currency_value": 6358622400.0,
+      "order_amount": 46138275.0
+    },
+    {
+      "code": "600379.SH",
+      "name": "宝光股份",
+      "concepts": [
+        "电子特气",
+        "氢能",
+        "真空灭弧室"
+      ],
+      "primary_concept": "电子特气",
+      "real_concepts": [],
+      "change_rate": 10.016,
+      "type": "涨停",
+      "first_limit_up_time": 1782180142,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.4831,
+      "currency_value": 4533667500.0,
+      "order_amount": 35705963.0
+    },
+    {
+      "code": "002031.SZ",
+      "name": "巨轮智能",
+      "concepts": [
+        "人形机器人",
+        "XT减速器",
+        "轮胎模具"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "减速器"
+          ],
+          "note": "轮胎模具龙头转型智能装备，RV减速器已小批量生产，同时具备工业机器人整机能力"
+        }
+      ],
+      "change_rate": 9.9458,
+      "type": "涨停",
+      "first_limit_up_time": 1782180195,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.7379,
+      "currency_value": 11634813100.0,
+      "order_amount": 132748610.0
+    },
+    {
+      "code": "000691.SZ",
+      "name": "亚太实业",
+      "concepts": [
+        "医药中间体",
+        "精细化工",
+        "股东增持"
+      ],
+      "primary_concept": "精细化工",
+      "real_concepts": [],
+      "change_rate": 9.9914,
+      "type": "涨停",
+      "first_limit_up_time": 1782180486,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.8589,
+      "currency_value": 4128157900.0,
+      "order_amount": 98732532.0
+    },
+    {
+      "code": "000042.SZ",
+      "name": "中洲控股",
+      "concepts": [
+        "地产开发",
+        "物业服务",
+        "粤港澳大湾区"
+      ],
+      "primary_concept": "粤港澳大湾区",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782180636,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 1.3409,
+      "currency_value": 6574614500.0,
+      "order_amount": 30800880.0
+    },
+    {
+      "code": "000571.SZ",
+      "name": "新大洲A",
+      "concepts": [
+        "聚焦煤炭主业",
+        "拟退出牛肉产业",
+        "C919供应商",
+        "海南自贸区"
+      ],
+      "primary_concept": "海南自贸区",
+      "real_concepts": [],
+      "change_rate": 9.9485,
+      "type": "涨停",
+      "first_limit_up_time": 1782180750,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 10.6306,
+      "currency_value": 5217689700.0,
+      "order_amount": 21214421.0
+    },
+    {
+      "code": "600743.SH",
+      "name": "华远控股",
+      "concepts": [
+        "酒店管理",
+        "物业管理",
+        "实控人筹划重组"
+      ],
+      "primary_concept": "物业管理",
+      "real_concepts": [],
+      "change_rate": 9.9548,
+      "type": "涨停",
+      "first_limit_up_time": 1782180768,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.6678,
+      "currency_value": 5701025100.0,
+      "order_amount": 36288378.0
+    },
+    {
+      "code": "002631.SZ",
+      "name": "德尔未来",
+      "concepts": [
+        "家居产品",
+        "石墨烯",
+        "亏损收窄"
+      ],
+      "primary_concept": "石墨烯",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "消费",
+            "家居"
+          ],
+          "note": "木地板+定制家居，旧房翻新地板更换，石墨烯新材料布局"
+        }
+      ],
+      "change_rate": 10.0367,
+      "type": "涨停",
+      "first_limit_up_time": 1782181077,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.609,
+      "currency_value": 7134215400.0,
+      "order_amount": 11033427.0
+    },
+    {
+      "code": "603863.SH",
+      "name": "松炀资源",
+      "concepts": [
+        "造纸",
+        "业绩减亏",
+        "粤港澳大湾区"
+      ],
+      "primary_concept": "粤港澳大湾区",
+      "real_concepts": [],
+      "change_rate": 10.0295,
+      "type": "涨停",
+      "first_limit_up_time": 1782181321,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.6507,
+      "currency_value": 3053378000.0,
+      "order_amount": 19707828.0
+    },
+    {
+      "code": "603007.SH",
+      "name": "顺景科技",
+      "concepts": [
+        "具身智能",
+        "定增募资10.77亿",
+        "传感器",
+        "IMU"
+      ],
+      "primary_concept": "具身智能",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "传感器"
+          ],
+          "note": "定增募资布局具身智能，传感器+IMU是机器人核心感知元件，从传统业务向智能机器人转型"
+        }
+      ],
+      "change_rate": 10.0324,
+      "type": "涨停",
+      "first_limit_up_time": 1782182408,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 13.0196,
+      "currency_value": 4726605400.0,
+      "order_amount": 27755621.0
+    },
+    {
+      "code": "002420.SZ",
+      "name": "毅昌科技",
+      "concepts": [
+        "人形机器人",
+        "滁州国资入主",
+        "汽车结构件"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [],
+      "change_rate": 9.9458,
+      "type": "涨停",
+      "first_limit_up_time": 1782182718,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.942,
+      "currency_value": 2460619200.0,
+      "order_amount": 23180608.0
+    },
+    {
+      "code": "002976.SZ",
+      "name": "瑞玛精密",
+      "concepts": [
+        "高送转",
+        "光通信散热",
+        "空气悬架",
+        "汽车零部件"
+      ],
+      "primary_concept": "高送转",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782182835,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 18.6473,
+      "currency_value": 2987053400.0,
+      "order_amount": 17978840.0
+    },
+    {
+      "code": "605580.SH",
+      "name": "恒盛能源",
+      "concepts": [
+        "培育钻石",
+        "CVD金刚石",
+        "热电联产"
+      ],
+      "primary_concept": "培育钻石",
+      "real_concepts": [],
+      "change_rate": 9.9886,
+      "type": "涨停",
+      "first_limit_up_time": 1782185330,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 9.7939,
+      "currency_value": 8139600000.0,
+      "order_amount": 18203634.0
+    },
+    {
+      "code": "603669.SH",
+      "name": "灵康药业",
+      "concepts": [
+        "创新药",
+        "阿尔茨海默"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 10.099,
+      "type": "涨停",
+      "first_limit_up_time": 1782190941,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.1944,
+      "currency_value": 3960557000.0,
+      "order_amount": 30669410.0
+    },
+    {
+      "code": "300961.SZ",
+      "name": "深水海纳",
+      "concepts": [
+        "工业污水处理",
+        "智慧水务",
+        "控制权变更"
+      ],
+      "primary_concept": "控制权变更",
+      "real_concepts": [],
+      "change_rate": 19.982,
+      "type": "涨停",
+      "first_limit_up_time": 1782191787,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 13.7903,
+      "currency_value": 2025186100.0,
+      "order_amount": 17622807.0
+    },
+    {
+      "code": "600708.SH",
+      "name": "光明地产",
+      "concepts": [
+        "物业管理",
+        "无ST风险"
+      ],
+      "primary_concept": "物业管理",
+      "real_concepts": [],
+      "change_rate": 10.0334,
+      "type": "涨停",
+      "first_limit_up_time": 1782192284,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.0812,
+      "currency_value": 7321163900.0,
+      "order_amount": 58347179.0
+    },
+    {
+      "code": "603318.SH",
+      "name": "水发燃气",
+      "concepts": [
+        "AI数据中心燃气轮机",
+        "氦气"
+      ],
+      "primary_concept": "氦气",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电力设备",
+            "燃气轮机"
+          ],
+          "note": "AI数据中心燃气轮机发电+氦气双概念，燃气轮机是数据中心备用电源核心设备，氦气为半导体/医疗战略气体"
+        }
+      ],
+      "change_rate": 9.9718,
+      "type": "涨停",
+      "first_limit_up_time": 1782192631,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 25.8099,
+      "currency_value": 5366539100.0,
+      "order_amount": 17894795.0
+    }
+  ],
+  "signal_concepts": {
+    "产品涨价": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002167.SZ",
+        "600470.SH"
+      ]
+    },
+    "控制权变更": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "300665.SZ",
+        "300961.SZ"
+      ]
+    },
+    "创新药": {
+      "stock_count": 9,
+      "limit_up_count": 9,
+      "limit_down_count": 0,
+      "stocks": [
+        "000566.SZ",
+        "600851.SH",
+        "002038.SZ",
+        "002370.SZ",
+        "600488.SH",
+        "000813.SZ",
+        "300149.SZ",
+        "600881.SH",
+        "603669.SH"
+      ]
+    },
+    "海南自贸区": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "000566.SZ",
+        "000571.SZ"
+      ]
+    },
+    "机器人": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002921.SZ",
+        "603725.SH"
+      ]
+    },
+    "汽车零部件": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002921.SZ",
+        "002976.SZ"
+      ]
+    },
+    "培育钻石": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "600172.SH",
+        "605580.SH"
+      ]
+    },
+    "磷化工": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002584.SZ",
+        "600470.SH"
+      ]
+    },
+    "电子特气": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002549.SZ",
+        "600379.SH"
+      ]
+    },
+    "氦气": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002549.SZ",
+        "603318.SH"
+      ]
+    },
+    "精细化工": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002453.SZ",
+        "000691.SZ"
+      ]
+    },
+    "石墨烯": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "601011.SH",
+        "002631.SZ"
+      ]
+    },
+    "氢能": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "601011.SH",
+        "600379.SH"
+      ]
+    },
+    "人形机器人": {
+      "stock_count": 3,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "stocks": [
+        "002196.SZ",
+        "002031.SZ",
+        "002420.SZ"
+      ]
+    },
+    "高送转": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002830.SZ",
+        "002976.SZ"
+      ]
+    },
+    "热电联产": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "600719.SH",
+        "605580.SH"
+      ]
+    },
+    "具身智能": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "603466.SH",
+        "603007.SH"
+      ]
+    },
+    "粤港澳大湾区": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "000042.SZ",
+        "603863.SH"
+      ]
+    },
+    "物业管理": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "600743.SH",
+        "600708.SH"
+      ]
+    }
+  },
+  "noise_only_stocks": [],
+  "unclassified": [
+    {
+      "code": "002648.SZ",
+      "name": "卫星化学",
+      "change_rate": 10.0044,
+      "type": "涨停",
+      "tags": [
+        "业绩预增",
+        "液冷冷却液",
+        "新材料"
+      ]
+    },
+    {
+      "code": "002674.SZ",
+      "name": "兴业科技",
+      "change_rate": 10.0051,
+      "type": "涨停",
+      "tags": [
+        "磷化铟收购",
+        "机器人电子皮肤",
+        "汽车内饰皮革"
+      ]
+    },
+    {
+      "code": "600397.SH",
+      "name": "江钨装备",
+      "change_rate": 9.991,
+      "type": "涨停",
+      "tags": [
+        "钨钽铌资产注入",
+        "磁选装备"
+      ]
+    },
+    {
+      "code": "603407.SH",
+      "name": "长裕集团",
+      "change_rate": 9.9947,
+      "type": "涨停",
+      "tags": [
+        "氧氯化锆",
+        "陶瓷载板",
+        "光通讯"
+      ]
+    },
+    {
+      "code": "605069.SH",
+      "name": "正和生态",
+      "change_rate": 10.0164,
+      "type": "涨停",
+      "tags": [
+        "智谱AI",
+        "水务机器狗",
+        "生态水利"
+      ]
+    },
+    {
+      "code": "603757.SH",
+      "name": "大元泵业",
+      "change_rate": 10.0049,
+      "type": "涨停",
+      "tags": [
+        "液冷泵",
+        "算力温控",
+        "泵业龙头"
+      ]
+    },
+    {
+      "code": "600777.SH",
+      "name": "新潮能源",
+      "change_rate": 9.9796,
+      "type": "涨停",
+      "tags": [
+        "摘帽复牌",
+        "页岩油",
+        "债务化解"
+      ]
+    },
+    {
+      "code": "000882.SZ",
+      "name": "华联股份",
+      "change_rate": 9.7744,
+      "type": "涨停",
+      "tags": [
+        "社区商业",
+        "REITs"
+      ]
+    },
+    {
+      "code": "000783.SZ",
+      "name": "长江证券",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "券商",
+        "科创投资",
+        "高分红填权"
+      ]
+    },
+    {
+      "code": "600506.SH",
+      "name": "统一股份",
+      "change_rate": 9.9866,
+      "type": "涨停",
+      "tags": [
+        "液冷服务器",
+        "控制权拟变更"
+      ]
+    },
+    {
+      "code": "000756.SZ",
+      "name": "新华制药",
+      "change_rate": 9.9836,
+      "type": "涨停",
+      "tags": [
+        "创新药获批",
+        "解热镇痛原料药",
+        "阿尔茨海默症"
+      ]
+    },
+    {
+      "code": "002580.SZ",
+      "name": "圣阳股份",
+      "change_rate": 10.0095,
+      "type": "涨停",
+      "tags": [
+        "算力",
+        "液冷储能",
+        "电池"
+      ]
+    },
+    {
+      "code": "000070.SZ",
+      "name": "特发信息",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "MPO光连接器",
+        "CPO",
+        "光纤光缆"
+      ]
+    },
+    {
+      "code": "300085.SZ",
+      "name": "银之杰",
+      "change_rate": 20.0,
+      "type": "涨停",
+      "tags": [
+        "开盘啦实控人任董事长",
+        "金融科技"
+      ]
+    },
+    {
+      "code": "600400.SH",
+      "name": "红豆股份",
+      "change_rate": 10.1351,
+      "type": "涨停",
+      "tags": [
+        "问询函澄清",
+        "养老机器人",
+        "男装"
+      ]
+    },
+    {
+      "code": "301211.SZ",
+      "name": "亨迪药业",
+      "change_rate": 19.9787,
+      "type": "涨停",
+      "tags": [
+        "布洛芬",
+        "原料药",
+        "制剂"
+      ]
+    },
+    {
+      "code": "002728.SZ",
+      "name": "特一药业",
+      "change_rate": 9.9751,
+      "type": "涨停",
+      "tags": [
+        "止咳宝片",
+        "二线品种高增",
+        "中药",
+        "分红"
+      ]
+    },
+    {
+      "code": "603106.SH",
+      "name": "恒银科技",
+      "change_rate": 10.068,
+      "type": "涨停",
+      "tags": [
+        "AI金融",
+        "全球化",
+        "债权回收",
+        "智能终端"
+      ]
+    },
+    {
+      "code": "000551.SZ",
+      "name": "创元科技",
+      "change_rate": 9.9935,
+      "type": "涨停",
+      "tags": [
+        "商业航天",
+        "洁净环保",
+        "国网中标"
+      ]
+    },
+    {
+      "code": "002068.SZ",
+      "name": "黑猫股份",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "超级电容",
+        "超导电炭黑",
+        "炭黑龙头"
+      ]
+    },
+    {
+      "code": "605366.SH",
+      "name": "宏柏新材",
+      "change_rate": 9.9796,
+      "type": "涨停",
+      "tags": [
+        "光纤概念",
+        "含硫硅烷",
+        "电子级硅基材料"
+      ]
+    },
+    {
+      "code": "603717.SH",
+      "name": "天域生物",
+      "change_rate": 10.0486,
+      "type": "涨停",
+      "tags": [
+        "生猪养殖",
+        "功能性红曲",
+        "光伏"
+      ]
+    },
+    {
+      "code": "605167.SH",
+      "name": "利柏特",
+      "change_rate": 10.033,
+      "type": "涨停",
+      "tags": [
+        "可转债强赎",
+        "核电模块",
+        "工业模块"
+      ]
+    },
+    {
+      "code": "605118.SH",
+      "name": "力鼎光电",
+      "change_rate": 10.0064,
+      "type": "涨停",
+      "tags": [
+        "AI机器视觉",
+        "低空经济",
+        "物流机器人"
+      ]
+    },
+    {
+      "code": "600843.SH",
+      "name": "上工申贝",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "纺织产业合作",
+        "碳纤维运动飞机",
+        "缝制机器人"
+      ]
+    },
+    {
+      "code": "603210.SH",
+      "name": "泰鸿万立",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "新能源汽车零部件",
+        "小米汽车"
+      ]
+    },
+    {
+      "code": "603122.SH",
+      "name": "合富中国",
+      "change_rate": 9.9914,
+      "type": "涨停",
+      "tags": [
+        "AI医疗",
+        "猴痘概念",
+        "海峡两岸"
+      ]
+    },
+    {
+      "code": "002021.SZ",
+      "name": "中捷资源",
+      "change_rate": 9.8765,
+      "type": "涨停",
+      "tags": [
+        "机器人概念",
+        "工业缝纫机",
+        "海外市场",
+        "国资背景"
+      ]
+    },
+    {
+      "code": "002522.SZ",
+      "name": "浙江众成",
+      "change_rate": 9.9711,
+      "type": "涨停",
+      "tags": [
+        "光纤油膏",
+        "POF热收缩膜"
+      ]
+    },
+    {
+      "code": "001206.SZ",
+      "name": "依依股份",
+      "change_rate": 10.0297,
+      "type": "涨停",
+      "tags": [
+        "宠物卫生用品",
+        "产品提价",
+        "出口"
+      ]
+    },
+    {
+      "code": "603938.SH",
+      "name": "三孚股份",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "高纯四氯化硅涨价",
+        "光纤材料",
+        "存储芯片"
+      ]
+    },
+    {
+      "code": "002374.SZ",
+      "name": "中锐股份",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "防伪瓶盖",
+        "资产剥离",
+        "化债预期"
+      ]
+    },
+    {
+      "code": "002141.SZ",
+      "name": "贤丰控股",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "覆铜板",
+        "PCB上游"
+      ]
+    },
+    {
+      "code": "002672.SZ",
+      "name": "东江环保",
+      "change_rate": 10.1333,
+      "type": "涨停",
+      "tags": [
+        "稀贵金属",
+        "危废资源化",
+        "氟化工"
+      ]
+    },
+    {
+      "code": "001225.SZ",
+      "name": "和泰机电",
+      "change_rate": 9.9952,
+      "type": "涨停",
+      "tags": [
+        "澄清机器人概念",
+        "物料输送设备",
+        "出海"
+      ]
+    },
+    {
+      "code": "002962.SZ",
+      "name": "五方光电",
+      "change_rate": 9.9941,
+      "type": "涨停",
+      "tags": [
+        "玻璃晶圆",
+        "光学光电子",
+        "AR/VR光学元件"
+      ]
+    },
+    {
+      "code": "600707.SH",
+      "name": "彩虹股份",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "玻璃基板封装",
+        "基板玻璃",
+        "显示面板"
+      ]
+    },
+    {
+      "code": "300835.SZ",
+      "name": "龙磁科技",
+      "change_rate": 19.999,
+      "type": "涨停",
+      "tags": [
+        "芯片电感",
+        "服务器电源",
+        "稀土永磁"
+      ]
+    },
+    {
+      "code": "300721.SZ",
+      "name": "怡达股份",
+      "change_rate": 19.993,
+      "type": "涨停",
+      "tags": [
+        "湿电子化学品",
+        "HPPO技术",
+        "环氧丙烷",
+        "拟建新项目"
+      ]
+    },
+    {
+      "code": "600171.SH",
+      "name": "上海贝岭",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "模拟芯片",
+        "功率芯片",
+        "光通信",
+        "汽车电子"
+      ]
+    },
+    {
+      "code": "603630.SH",
+      "name": "拉芳家化",
+      "change_rate": 10.0386,
+      "type": "涨停",
+      "tags": [
+        "洗护",
+        "医美概念",
+        "跳水队合作",
+        "一季度增长"
+      ]
+    },
+    {
+      "code": "601869.SH",
+      "name": "长飞光纤",
+      "change_rate": 9.9998,
+      "type": "涨停",
+      "tags": [
+        "空芯光纤",
+        "AI算力光纤",
+        "业绩高增"
+      ]
+    },
+    {
+      "code": "605369.SH",
+      "name": "拱东医疗",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "医疗耗材",
+        "外销"
+      ]
+    },
+    {
+      "code": "002047.SZ",
+      "name": "宝鹰股份",
+      "change_rate": 9.9078,
+      "type": "涨停",
+      "tags": [
+        "光耦合器",
+        "股权转让获批"
+      ]
+    },
+    {
+      "code": "002687.SZ",
+      "name": "乔治白",
+      "change_rate": 10.0239,
+      "type": "涨停",
+      "tags": [
+        "职业装",
+        "校服",
+        "通勤服拓展"
+      ]
+    },
+    {
+      "code": "603116.SH",
+      "name": "红蜻蜓",
+      "change_rate": 10.0164,
+      "type": "涨停",
+      "tags": [
+        "AI设计",
+        "时尚鞋履",
+        "IP经济"
+      ]
+    },
+    {
+      "code": "603335.SH",
+      "name": "迪生力",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "收购半导体",
+        "汽车轮毂"
+      ]
+    },
+    {
+      "code": "600405.SH",
+      "name": "动力源",
+      "change_rate": 9.901,
+      "type": "涨停",
+      "tags": [
+        "AI智算中心电源",
+        "液冷超充",
+        "电源系统"
+      ]
+    },
+    {
+      "code": "605377.SH",
+      "name": "华旺科技",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "装饰原纸",
+        "盈利修复"
+      ]
+    },
+    {
+      "code": "002014.SZ",
+      "name": "永新股份",
+      "change_rate": 9.9808,
+      "type": "涨停",
+      "tags": [
+        "包装材料",
+        "新产能投放",
+        "高股息"
+      ]
+    },
+    {
+      "code": "603015.SH",
+      "name": "弘讯科技",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "MCU芯片",
+        "核聚变",
+        "工业自动化"
+      ]
+    },
+    {
+      "code": "600793.SH",
+      "name": "宜宾纸业",
+      "change_rate": 10.0158,
+      "type": "涨停",
+      "tags": [
+        "与五粮液续签协议",
+        "生物基新材料",
+        "醋酸纤维素",
+        "竹浆造纸"
+      ]
+    },
+    {
+      "code": "002871.SZ",
+      "name": "伟隆股份",
+      "change_rate": 9.9949,
+      "type": "涨停",
+      "tags": [
+        "液冷阀门",
+        "高出口占比"
+      ]
+    },
+    {
+      "code": "688291.SH",
+      "name": "金橙子",
+      "change_rate": 20.0,
+      "type": "涨停",
+      "tags": [
+        "激光通信",
+        "激光控制系统",
+        "收购萨米特"
+      ]
+    },
+    {
+      "code": "600360.SH",
+      "name": "华微电子",
+      "change_rate": 9.9919,
+      "type": "涨停",
+      "tags": [
+        "功率半导体"
+      ]
+    },
+    {
+      "code": "001279.SZ",
+      "name": "强邦新材",
+      "change_rate": 10.0154,
+      "type": "涨停",
+      "tags": [
+        "电子陶瓷",
+        "印刷版材",
+        "铝期货套保"
+      ]
+    }
+  ],
+  "noise_stats": {
+    "过滤标签总数": 36,
+    "涉及股票数": 34,
+    "高频噪音标签": {
+      "一季报增长": 7,
+      "国企改革": 4,
+      "业绩增长": 3,
+      "摘帽": 3,
+      "央企": 2,
+      "国企": 2,
+      "江西国资": 1,
+      "回购": 1,
+      "山东国资": 1,
+      "深圳国资": 1,
+      "大连国资": 1,
+      "长春国资": 1,
+      "扭亏为盈": 1,
+      "广东国资": 1,
+      "咸阳国资": 1
+    },
+    "按类别": {
+      "财务业绩": {
+        "count": 14,
+        "tags": {
+          "一季报增长": 7,
+          "业绩增长": 3,
+          "扭亏为盈": 1,
+          "高分红": 1,
+          "一季报扭亏": 1,
+          "分红实施": 1
+        },
+        "股票数": 34
+      },
+      "公司属性": {
+        "count": 17,
+        "tags": {
+          "国企改革": 4,
+          "央企": 2,
+          "国企": 2,
+          "江西国资": 1,
+          "山东国资": 1,
+          "深圳国资": 1,
+          "大连国资": 1,
+          "长春国资": 1,
+          "广东国资": 1,
+          "咸阳国资": 1,
+          "上海国资": 1,
+          "吉林国资": 1
+        },
+        "股票数": 34
+      },
+      "股权事件": {
+        "count": 2,
+        "tags": {
+          "回购": 1,
+          "股份转让": 1
+        },
+        "股票数": 34
+      },
+      "经营杂项": {
+        "count": 0,
+        "tags": {},
+        "股票数": 34
+      },
+      "ST变动": {
+        "count": 3,
+        "tags": {
+          "摘帽": 3
+        },
+        "股票数": 34
+      },
+      "通用词": {
+        "count": 0,
+        "tags": {},
+        "股票数": 34
+      }
+    }
+  },
+  "统计": {
+    "涨停家数": 94,
+    "信号分组数": 19,
+    "噪音过滤标签数": 36,
+    "噪音only股票数": 0,
+    "unclassified股票数": 56,
+    "题材规模分布": {
+      "大题材（≥5只）": [
+        "创新药"
+      ],
+      "中等题材（3-4只）": [
+        "人形机器人"
+      ],
+      "小题材（<3只）": [
+        "产品涨价",
+        "具身智能",
+        "培育钻石",
+        "控制权变更",
+        "机器人",
+        "氢能",
+        "氦气",
+        "汽车零部件",
+        "海南自贸区",
+        "热电联产",
+        "物业管理",
+        "电子特气",
+        "石墨烯",
+        "磷化工",
+        "粤港澳大湾区",
+        "精细化工",
+        "高送转"
+      ]
+    },
+    "最强题材": {
+      "concept": "创新药",
+      "stock_count": 9,
+      "limit_up_count": 9,
+      "avg_change_rate": 11.08
+    },
+    "梯队完整性": {
+      "有首板有连板": [
+        "创新药",
+        "海南自贸区",
+        "磷化工",
+        "高送转",
+        "热电联产"
+      ],
+      "纯首板": [
+        "控制权变更",
+        "机器人",
+        "汽车零部件",
+        "电子特气",
+        "氦气",
+        "精细化工",
+        "石墨烯",
+        "氢能",
+        "人形机器人",
+        "具身智能",
+        "粤港澳大湾区",
+        "物业管理"
+      ],
+      "纯连板": [
+        "产品涨价",
+        "培育钻石"
+      ]
+    },
+    "资金集中度": {
+      "前三大题材股票数占比_%": 14.9,
+      "前三大题材涨停数占比_%": 14.9
+    },
+    "情绪指标": {
+      "炸板率_%": 51.1,
+      "封板率_%": 48.9,
+      "平均换手率_%": 9.62
+    }
+  }
+}

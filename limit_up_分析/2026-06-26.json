@@ -1,0 +1,991 @@
+{
+  "_meta": {
+    "date": "2026-06-26",
+    "stage": "最终输出 — 概念分级完成",
+    "total_unique_stocks": 90,
+    "total_records": 96,
+    "limit_up_stocks": 60,
+    "limit_down_stocks": 30,
+    "matched_by_reference": 21,
+    "filled_by_ai": 75,
+    "coverage_rate": 21.9,
+    "hot_concepts_used": [
+      "PCB与载板",
+      "玻璃概念",
+      "陶瓷概念",
+      "光刻胶及辅材",
+      "存储芯片"
+    ]
+  },
+  "stocks": [
+    {
+      "symbol": "000823.SZ",
+      "name": "超声电子",
+      "note": "PCB和覆铜板制造企业，产品覆盖多层板/HDI/柔性板，受益于AI硬件对高端PCB及覆铜板的需求，3连板强势",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "覆铜板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600228.SH",
+      "name": "返利科技",
+      "note": "电商导购返利平台，控制权变更复牌涨停，AI电商导购/AI比价/AI优惠推荐方向",
+      "strength": 5,
+      "sub_concept": [
+        "AI应用",
+        "AI电商"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001289.SZ",
+      "name": "龙源电力",
+      "note": "国家能源集团旗下全球最大风电运营商，风电装机超3000万千瓦，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "电力",
+        "风电运营"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605366.SH",
+      "name": "宏柏新材",
+      "note": "高纯四氯化硅及含硫硅烷生产企业，高纯四氯化硅用于光纤预制棒及半导体制造",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002965.SZ",
+      "name": "祥鑫科技",
+      "note": "收购酷尔芯布局液冷服务器，人形机器人概念，受益AI算力散热需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002141.SZ",
+      "name": "贤丰控股",
+      "note": "PCB上游覆铜板企业，子公司高硕航宇年产能720万张覆铜板，受益于AI硬件对PCB与载板的需求拉动，2连板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "覆铜板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000620.SZ",
+      "name": "盈新发展",
+      "note": "战略转型存储芯片及封装测试领域，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603163.SH",
+      "name": "圣晖集成",
+      "note": "半导体洁净室工程专业厂商，台湾圣晖旗下，聚焦半导体/光电洁净室，客户含中芯国际/长江存储等，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "洁净室工程"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "601016.SH",
+      "name": "节能风电",
+      "note": "中节能旗下风电运营平台，专注风力发电开发运营，陆上风电为主，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "电力",
+        "风电运营"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002129.SZ",
+      "name": "TCL中环",
+      "note": "半导体硅片布局，覆盖4-12英寸硅片，12英寸产能爬坡中，半导体硅片+光伏硅片双轮驱动",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "硅片/衬底"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002559.SZ",
+      "name": "亚威股份",
+      "note": "工业母机+机器人概念，参股半导体检测公司，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "其他"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600481.SH",
+      "name": "双良节能",
+      "note": "液冷服务器概念首板，节能设备技术向液冷散热方向延伸，液冷散热方向资金关注",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603270.SH",
+      "name": "金帝股份",
+      "note": "人形机器人概念首板，关节模组+精密冲压零部件供应商，机器人产业链延伸受益",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "其他零部件"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "301349.SZ",
+      "name": "信德新材",
+      "note": "光纤概念20cm首板，负极包覆材料+碳纤维属性，高纯四氯化硅用于光纤预制棒制造",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001270.SZ",
+      "name": "铖昌科技",
+      "note": "相控阵T/R芯片核心供应商，卫星互联网星载天线和地面终端核心器件，低轨卫星星座大规模组网核心受益标的",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "卫星制造"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001400.SZ",
+      "name": "江顺科技",
+      "note": "铝挤压模具龙头，3D打印+商业航天+液冷服务器多概念叠加，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "航天零部件"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600343.SH",
+      "name": "航天动力",
+      "note": "航天科技六院旗下，液体火箭发动机核心供应商，配套长征系列及民营商业火箭，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "火箭发动机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002180.SZ",
+      "name": "奔图科技",
+      "note": "集成电路设计+打印机业务，机器人概念首板，首板跟风属性较强",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "其他零部件"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "003033.SZ",
+      "name": "征和工业",
+      "note": "链传动行业龙头，人形机器人灵巧手核心零部件供应商，概念纯正，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "灵巧手"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603722.SH",
+      "name": "阿科力",
+      "note": "COC（环烯烃共聚物）材料国产替代突破，半导体材料+航空航天双概念。6月 26 日盘中提前涨停，晚间才出公告：实控人朱学军、崔小丽计划转让股份 + 定向增发，事项或将导致公司易主，股票 6 月 29 日起停牌（预计停牌 2 个交易日）。市场预期新实控人会带来产业资源、资本加持、业务转型",
+      "strength": 5,
+      "sub_concept": [
+        "重组概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688432.SH",
+      "name": "有研硅",
+      "note": "国内半导体硅片老牌厂商，产品覆盖6/8英寸抛光片/外延片，硅片涨价预期+拟收购晶隆半导体催化，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "硅片/衬底"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603194.SH",
+      "name": "中力股份",
+      "note": "电动叉车及数智物流解决方案提供商，机器人（物流机器人/AGV）概念，股东减持落地利空出尽，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "物流机器人"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600118.SH",
+      "name": "中国卫星",
+      "note": "航天科技五院旗下，国内微小卫星制造绝对龙头，承担低轨卫星星座批量研制任务，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "卫星制造"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603155.SH",
+      "name": "新亚强",
+      "note": "高纯四氯化硅及半导体材料生产企业，光纤概念+锂电池概念叠加，首板涨停",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300540.SZ",
+      "name": "蜀道装备",
+      "note": "空分装置及氦气生产企业，氦气用于火箭推进剂和航天工程，商业航天+氦气概念，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "火箭发动机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688596.SH",
+      "name": "正帆科技",
+      "note": "国内半导体高纯介质供应系统龙头，碳化硅陶瓷+电子特气双概念，为晶圆厂提供高纯气体/化学品输送系统，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "电子特气"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688409.SH",
+      "name": "富创精密",
+      "note": "国内半导体设备精密零部件龙头，已进入AMAT/Lam Research/TEL等全球设备巨头供应链，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体设备",
+        "设备零部件"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002674.SZ",
+      "name": "兴业科技",
+      "note": "拟收购青岛立博布局磷化铟，磷化铟用于光模块/射频器件，AI硬件上游材料方向",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "元器件与材料",
+        "磷化铟"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603956.SH",
+      "name": "威派格",
+      "note": "液冷泵产品，智慧水务+液冷散热双概念，数据中心液冷散热方向",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002568.SZ",
+      "name": "百润股份",
+      "note": "RIO预调鸡尾酒龙头，烈酒+预调酒双轮驱动，中报预增催化",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "食品饮料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603861.SH",
+      "name": "白云电器",
+      "note": "AIDC高压直流配电+变压器出海，AI数据中心电力配电系统核心供应商",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电源管理"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603687.SH",
+      "name": "大胜达",
+      "note": "GPU投资进展，钙钛矿设备+纸包装双主业，AI算力方向布局",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "算力芯片",
+        "GPU/AI芯片"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600545.SH",
+      "name": "卓郎智能",
+      "note": "纺织机械龙头，旗下福克曼VGT系列超细玻纤加捻机国内垄断，受益电子布需求增长",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "电子布"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001210.SZ",
+      "name": "金房能源",
+      "note": "数据中心供冷+综合能源服务，新能源供热+数据中心配套",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电源管理"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002106.SZ",
+      "name": "莱宝高科",
+      "note": "玻璃基板加工企业，TGV玻璃基板可用于先进封装，MED电子纸技术布局",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "玻璃概念",
+        "玻璃基板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600962.SH",
+      "name": "国投中鲁",
+      "note": "并购重组+半导体工程方向，浓缩果汁主业向半导体工程转型",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "洁净室工程"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603650.SH",
+      "name": "彤程新材",
+      "note": "通过收购北京科华切入光刻胶赛道，光刻胶树脂产品，H股上市推进中",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "光刻胶及辅材"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600367.SH",
+      "name": "红星发展",
+      "note": "玻璃基板上游+MLCC上游，碳酸锶产品用于电子陶瓷和玻璃基板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "MLCC"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600552.SH",
+      "name": "凯盛科技",
+      "note": "氧化锆陶瓷盖板/背板龙头，拓展AI芯片封装基板方向",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "氧化锆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603977.SH",
+      "name": "国泰集团",
+      "note": "小型固体火箭发动机，钽铌涨价+航天军工双概念",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "火箭发动机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603928.SH",
+      "name": "兴业股份",
+      "note": "铸造树脂+光刻胶，半导体材料方向布局",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "树脂"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "301051.SZ",
+      "name": "信濠光电",
+      "note": "玻璃盖板+储能调频双主业，消费电子玻璃盖板供应商",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "玻璃概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603903.SH",
+      "name": "中持股份",
+      "note": "芯长征入主布局功率半导体，污水处理主业向半导体转型",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "功率半导体"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001389.SZ",
+      "name": "广合科技",
+      "note": "算力PCB企业，拟60亿投建总部，可转债预案，AI算力硬件核心受益",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002962.SZ",
+      "name": "五方光电",
+      "note": "TGV产品布局，光学光电子+AR/VR方向",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "玻璃概念",
+        "玻璃基板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300162.SZ",
+      "name": "雷曼光电",
+      "note": "玻璃基Micro LED，先进封装方向，LED超高清显示",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "玻璃概念",
+        "玻璃基板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603698.SH",
+      "name": "航天工程",
+      "note": "实控人航天科技，绿氢工程+煤气化，航天工程服务商",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "火箭发动机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "601369.SH",
+      "name": "陕鼓动力",
+      "note": "秦风气体价值：陕鼓现有持股 63.94%，是公司高增长、高稳定现金流的工业气体运营平台；2025 年秦风气体营收 46.51 亿元，连续多年稳定增长，工业气体属于长周期、高毛利运营资产。收购利好：全资合并后，稳定气体运营利润将全部并表，增厚公司整体盈利；完善 “装备制造 + 气体运营” 双轮驱动，强化工业气体、CCUS、绿氢协同能力，市场预期长期盈利能力提升。",
+      "strength": 5,
+      "sub_concept": [
+        "重组概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600539.SH",
+      "name": "狮头股份",
+      "note": "拟收购利珀科技布局半导体封装+机器视觉，AI应用方向",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "视觉识别"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605296.SH",
+      "name": "神农集团",
+      "note": "生猪全产业链龙头，产能调控+成本优势，猪肉概念",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "食品饮料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002119.SZ",
+      "name": "康强电子",
+      "note": "国内半导体封装材料龙头，引线框架国内市占率第一",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "封装材料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300264.SZ",
+      "name": "佳创视讯",
+      "note": "音视频软件+《仙剑奇侠传》IP+MR，AI内容方向",
+      "strength": 5,
+      "sub_concept": [
+        "AI应用"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605399.SH",
+      "name": "晨光新材",
+      "note": "AI 算力、800G/1.6T 光模块、光纤预制棒大规模扩产，9N 高纯四氯化硅是光纤预制棒核心原料，单吨预制棒消耗 4-4.5 吨四氯化硅，需求短期激增。",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002910.SZ",
+      "name": "庄园牧场",
+      "note": "甘肃/青海区域乳企龙头，高原牧场特色",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "乳制品"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001215.SZ",
+      "name": "千味央厨",
+      "note": "餐饮供应链速冻龙头，服务肯德基/海底捞等头部餐企",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "食品饮料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002930.SZ",
+      "name": "宏川智慧",
+      "note": "长兴半导体+存储方向，石化仓储主业向半导体存储转型",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "分销"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603629.SH",
+      "name": "利通电子",
+      "note": "从液晶电视精密结构件转型算力租赁，AI算力服务商",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "算力租赁"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603201.SH",
+      "name": "常润股份",
+      "note": "汽车千斤顶及维修设备制造商",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "汽车零部件"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603327.SH",
+      "name": "福蓉科技",
+      "note": "折叠屏手机铝制中框/外壳供应商，苹果概念核心标的",
+      "strength": 5,
+      "sub_concept": [
+        "消费电子",
+        "折叠屏"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600851.SH",
+      "name": "海欣股份",
+      "note": "自主研发国家一类新药APDC（直肠癌三期临床）",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "创新药"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002307.SZ",
+      "name": "北新路桥",
+      "note": "新疆路桥建设龙头",
+      "strength": 5,
+      "sub_concept": [
+        "基建",
+        "路桥建设"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600776.SH",
+      "name": "东方通信",
+      "note": "专网通信设备+金融科技",
+      "strength": 5,
+      "sub_concept": [
+        "通信",
+        "专网通信"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "000859.SZ",
+      "name": "国风新材",
+      "note": "塑料薄膜+新材料",
+      "strength": 5,
+      "sub_concept": [
+        "化工",
+        "新材料"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603031.SH",
+      "name": "安孚科技",
+      "note": "百货零售+新能源电池转型",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "新零售"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002263.SZ",
+      "name": "大东南",
+      "note": "特高压电容膜供应商，电容膜是薄膜电容器核心材料",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "000070.SZ",
+      "name": "特发信息",
+      "note": "MPO光连接器+CPO+光纤光缆，AI数据中心光互联全方案",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "000766.SZ",
+      "name": "通化金马",
+      "note": "化学药品制剂制造",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "化学制药"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600152.SH",
+      "name": "维科技术",
+      "note": "钠离子电池，纺织主业向钠电转型",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "钠离子电池"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600498.SH",
+      "name": "烽火通信",
+      "note": "子公司飞思灵微电子研发星载光模块和空间激光通信器件",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "卫星互联网"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600708.SH",
+      "name": "光明地产",
+      "note": "上海光明集团旗下地产平台",
+      "strength": 5,
+      "sub_concept": [
+        "房地产",
+        "区域地产"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600522.SH",
+      "name": "中天科技",
+      "note": "海缆+电力电缆+光纤多业务龙头",
+      "strength": 5,
+      "sub_concept": [
+        "电力设备",
+        "电缆/海缆"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002083.SZ",
+      "name": "孚日股份",
+      "note": "VC/FEC等锂电池电解液添加剂",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "电解液"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "601799.SH",
+      "name": "星宇股份",
+      "note": "车灯龙头，奥迪/宝马等高端车企供应商",
+      "strength": 5,
+      "sub_concept": [
+        "汽车",
+        "汽车零部件"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002580.SZ",
+      "name": "圣阳股份",
+      "note": "铅酸电池+储能系统",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "储能"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600345.SH",
+      "name": "长江通信",
+      "note": "光纤光缆+通信设备",
+      "strength": 5,
+      "sub_concept": [
+        "通信",
+        "光纤光缆"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "000566.SZ",
+      "name": "海南海药",
+      "note": "南药+化学药",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "化学制药"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002903.SZ",
+      "name": "宇环数控",
+      "note": "数控磨床+机器人",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "工业母机"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603399.SH",
+      "name": "永杉锂业",
+      "note": "钼产品生产商，钼铁+钼精矿",
+      "strength": 5,
+      "sub_concept": [
+        "贵金属",
+        "钼"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002194.SZ",
+      "name": "武汉凡谷",
+      "note": "射频滤波器龙头，5G/6G基站滤波器/双工器",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "射频与传感器",
+        "射频前端"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603159.SH",
+      "name": "上海亚虹",
+      "note": "精密塑料模具及注塑件",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "汽车零部件"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002192.SZ",
+      "name": "融捷股份",
+      "note": "锂矿（四川甲基卡，亚洲最大锂辉石矿），比亚迪关联方",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "锂资源"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603316.SH",
+      "name": "诚邦股份",
+      "note": "园林绿化+生态修复",
+      "strength": 5,
+      "sub_concept": [
+        "基建",
+        "园林工程"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "001267.SZ",
+      "name": "汇绿生态",
+      "note": "园林绿化+生态修复",
+      "strength": 5,
+      "sub_concept": [
+        "基建",
+        "园林工程"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603296.SH",
+      "name": "华勤技术",
+      "note": "消费电子ODM龙头，手机+平板+笔电",
+      "strength": 5,
+      "sub_concept": [
+        "消费电子",
+        "ODM"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002497.SZ",
+      "name": "雅化集团",
+      "note": "锂盐加工+民爆双主业，特斯拉供应商",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "锂资源"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600724.SH",
+      "name": "宁波富达",
+      "note": "宁波区域地产+商业",
+      "strength": 5,
+      "sub_concept": [
+        "房地产",
+        "区域地产"
+      ],
+      "type": "limit_down"
+    }
+  ]
+}

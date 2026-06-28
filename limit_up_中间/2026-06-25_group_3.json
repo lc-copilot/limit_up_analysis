@@ -1,0 +1,299 @@
+{
+  "_meta": {
+    "date": "2026-06-25",
+    "total_stocks": 47,
+    "group_count": 5,
+    "stage": "分组完成 — 待子 LLM 分析",
+    "analysis_instruction": "## 分析任务\n\n请对以下每只股票，分析得出最终的 sub_concept 和 note。\n\n### 输入字段说明\n\n| 字段 | 说明 |\n|---|---|\n| `concepts` | 同花顺信号标签，市场给它的所有标签 |\n| `primary_concept` | 同花顺信号标签，市场给它的主要标签（频次最高） |\n| `real_concepts` | concepts_all.json 中已有的概念分类（可能为空） |\n\n### 判断逻辑（按优先级）\n\n1. **real_concepts 不为空** → 优先使用，判断是否仍然有效\n2. **热门概念匹配** → 如果该股票与热门概念相关，优先使用热门概念的层级\n3. **concepts / primary_concept 有线索** → 结合 AI 知识判断\n4. **以上都没有** → 用 AI 知识自行判断，仍不确定则填 [\"未知\"]\n\n### 输出格式\n\n每只股票输出一条或多条记录（多概念时多条），格式如下：\n\n```json\n{\n  \"symbol\": \"股票代码\",\n  \"name\": \"股票名称\",\n  \"note\": \"概念相关说明，要写具体\",\n  \"strength\": 5,\n  \"sub_concept\": [\"一级\", \"二级\", \"(三级)\"],\n  \"type\": \"limit_up\"\n}\n```\n\n### 规则\n\n- sub_concept 至少 2 级，最多 3 级\n- note 要写具体，说明为什么属于这个分类\n- strength 全部填 5\n- 一只股票可能有多个概念 → 输出多条记录\n- type: \"limit_up\" 或 \"limit_down\"",
+    "hot_concepts": [
+      {
+        "concept": "PCB与载板",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "PCB 工厂竞争激烈、下游压价；电子布、覆铜板产能稀缺、寡头格局、议价权极强，涨价带来的利润增量全部留在上游，机构优先抱团材料标的，行情强度远超 PCB 制造。算力硬件核心上游：AI 主线贯穿全年，GPU、光模块炒作完成后，资金挖掘上游 “卡脖子材料”，属于算力补涨主线；国产替代逻辑：高端高频覆铜板、低介电电子布长期被日、台垄断，国内生益、南亚、宏和、华正等突破高端认证，进入华为、国产算力供应链，政策加持；供需缺口持续性强：机构一致判断紧缺格局至少延续至 2027 年，不是短期脉冲行情，资金愿意中长期持仓、反复做波段，调整后快速反弹封板。",
+        "items": []
+      },
+      {
+        "concept": "玻璃概念",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "传统浮法玻璃是供给收缩周期修复，玻璃基板（TGV 超薄电子玻璃）是 AI 算力 + CPO 先进封装成长主线",
+        "items": []
+      },
+      {
+        "concept": "陶瓷概念",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "MLCC（陶瓷电容）+ 先进陶瓷基板（氮化铝 / 氧化铝）+ 陶瓷粉体三条细分共振，全部绑定 AI 算力刚需、供需紧缺、涨价周期、国产替代四重硬逻辑。需求端：AI 服务器带来十倍级增量，彻底重塑行业天花板。供给端：结构性紧缺，全球涨价周期持续到 2028 年。国产替代巨大空间，估值从周期股切换成长股。氮化铝陶瓷基板：1.6T/3.2T 光模块硬性刚需。SiC 功率半导体氮化硅陶瓷基板。MLCC 高纯钛酸钡陶瓷粉体。陶瓷封装管壳",
+        "items": []
+      },
+      {
+        "concept": "光刻胶及辅材",
+        "parent_path": [
+          "半导体",
+          "半导体材料"
+        ],
+        "note": "日本供给收紧，高端光刻胶出现实质性供需缺口。国产替代从 “概念测试” 进入批量商用质变（最核心基本面）。AI 先进封装新增海量需求",
+        "items": []
+      },
+      {
+        "concept": "存储芯片",
+        "parent_path": [],
+        "note": "存储芯片是 AI 算力硬件的核心上游，供需缺口持续性强，国产替代空间大",
+        "items": []
+      }
+    ],
+    "group": 3,
+    "group_total": 10
+  },
+  "stocks": [
+    {
+      "code": "600458.SH",
+      "name": "时代新材",
+      "concepts": [
+        "半导体材料",
+        "超级电容",
+        "风电出海"
+      ],
+      "primary_concept": "超级电容",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "元器件与材料",
+            "电容概念"
+          ],
+          "note": "中国中车旗下，风电叶片市占率第二+半导体材料（碳化硅涂层等），超级电容+风电出海双轮驱动"
+        },
+        {
+          "sub_concept": [
+            "风电设备",
+            "叶片"
+          ],
+          "note": "中国中车旗下，风电叶片市占率第二，叶片+轨道交通减振材料双主业"
+        }
+      ],
+      "change_rate": 10.013,
+      "type": "涨停",
+      "first_limit_up_time": 1782352211,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.4616,
+      "currency_value": 14695496000.0,
+      "order_amount": 19371708.0
+    },
+    {
+      "code": "605376.SH",
+      "name": "博迁新材",
+      "concepts": [
+        "MLCC镍粉",
+        "AI算力",
+        "H股上市"
+      ],
+      "primary_concept": "AI算力",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "元器件与材料",
+            "电容概念"
+          ],
+          "note": "AI 服务器单机 MLCC 用量是手机 10 倍以上，仅 80nm 以下超细镍粉可适配；公司全球第二、国内龙头，高端镍粉全球市占 11%+，2025 年签订 43-50 亿元境外大客户 5 年长单"
+        },
+        {
+          "sub_concept": [
+            "AI硬件",
+            "陶瓷概念",
+            "MLCC"
+          ],
+          "note": "AI服务器单机MLCC用量是手机10倍以上，仅80nm以下超细镍粉可适配；公司全球第二、国内龙头，高端镍粉全球市占11%+，2025年签订43-50亿元境外大客户5年长单"
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782352243,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.9178,
+      "currency_value": 64573344000.0,
+      "order_amount": 97476129.0
+    },
+    {
+      "code": "300650.SZ",
+      "name": "太龙股份",
+      "concepts": [
+        "存储芯片",
+        "半导体分销"
+      ],
+      "primary_concept": "存储芯片",
+      "real_concepts": [],
+      "change_rate": 20.0323,
+      "type": "涨停",
+      "first_limit_up_time": 1782352494,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 16.0448,
+      "currency_value": 2531331800.0,
+      "order_amount": 65006556.0
+    },
+    {
+      "code": "688380.SH",
+      "name": "中微半导",
+      "concepts": [
+        "MCU",
+        "存储芯片"
+      ],
+      "primary_concept": "存储芯片",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "数字芯片",
+            "MCU"
+          ],
+          "note": "国内MCU和SoC厂商，MCU以8位为主，用于小家电/消费电子/智能家居；产品定位偏低端"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782352638,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.1066,
+      "currency_value": 24718535000.0,
+      "order_amount": 215366650.0
+    },
+    {
+      "code": "002965.SZ",
+      "name": "祥鑫科技",
+      "concepts": [
+        "收购酷尔芯",
+        "液冷服务器",
+        "人形机器人"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电池",
+            "结构件"
+          ],
+          "note": "电池箱体+结构件+汽车冲压件，宁德时代/比亚迪供应链"
+        }
+      ],
+      "change_rate": 10.007,
+      "type": "涨停",
+      "first_limit_up_time": 1782352710,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 14.1324,
+      "currency_value": 8980004900.0,
+      "order_amount": 108129863.0
+    },
+    {
+      "code": "002518.SZ",
+      "name": "科士达",
+      "concepts": [
+        "液冷服务器",
+        "数据中心电源",
+        "储能"
+      ],
+      "primary_concept": "液冷服务器",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "光伏",
+            "逆变器"
+          ],
+          "note": "逆变器+UPS+储能，数据中心+光伏逆变器+储能PCS多线布局，与宁德时代有合资公司专注储能系统集成"
+        }
+      ],
+      "change_rate": 10.004,
+      "type": "涨停",
+      "first_limit_up_time": 1782352989,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.2183,
+      "currency_value": 30761240000.0,
+      "order_amount": 144091610.0
+    },
+    {
+      "code": "603065.SH",
+      "name": "宿迁联盛",
+      "concepts": [
+        "磷化铟衬底",
+        "终止减持",
+        "光稳定剂"
+      ],
+      "primary_concept": "终止减持",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782353216,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.7986,
+      "currency_value": 8433817200.0,
+      "order_amount": 39857400.0
+    },
+    {
+      "code": "601798.SH",
+      "name": "蓝科高新",
+      "concepts": [
+        "熔盐储能",
+        "并购重组"
+      ],
+      "primary_concept": "并购重组",
+      "real_concepts": [],
+      "change_rate": 9.9719,
+      "type": "涨停",
+      "first_limit_up_time": 1782353704,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.4071,
+      "currency_value": 2775955800.0,
+      "order_amount": 29072007.0
+    },
+    {
+      "code": "600516.SH",
+      "name": "方大炭素",
+      "concepts": [
+        "石墨烯散热",
+        "光纤概念",
+        "核电石墨"
+      ],
+      "primary_concept": "光纤概念",
+      "real_concepts": [],
+      "change_rate": 10.0813,
+      "type": "涨停",
+      "first_limit_up_time": 1782354625,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.5998,
+      "currency_value": 27255819000.0,
+      "order_amount": 71610609.0
+    },
+    {
+      "code": "688093.SH",
+      "name": "世华科技",
+      "concepts": [
+        "感光干膜",
+        "高性能光学材料",
+        "PCB概念"
+      ],
+      "primary_concept": "PCB概念",
+      "real_concepts": [],
+      "change_rate": 20.0138,
+      "type": "涨停",
+      "first_limit_up_time": 1782356493,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.2767,
+      "currency_value": 9734890500.0,
+      "order_amount": 18883583.0
+    }
+  ]
+}

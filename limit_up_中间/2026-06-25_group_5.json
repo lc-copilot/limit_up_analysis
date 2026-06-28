@@ -1,0 +1,236 @@
+{
+  "_meta": {
+    "date": "2026-06-25",
+    "total_stocks": 47,
+    "group_count": 5,
+    "stage": "分组完成 — 待子 LLM 分析",
+    "analysis_instruction": "## 分析任务\n\n请对以下每只股票，分析得出最终的 sub_concept 和 note。\n\n### 输入字段说明\n\n| 字段 | 说明 |\n|---|---|\n| `concepts` | 同花顺信号标签，市场给它的所有标签 |\n| `primary_concept` | 同花顺信号标签，市场给它的主要标签（频次最高） |\n| `real_concepts` | concepts_all.json 中已有的概念分类（可能为空） |\n\n### 判断逻辑（按优先级）\n\n1. **real_concepts 不为空** → 优先使用，判断是否仍然有效\n2. **热门概念匹配** → 如果该股票与热门概念相关，优先使用热门概念的层级\n3. **concepts / primary_concept 有线索** → 结合 AI 知识判断\n4. **以上都没有** → 用 AI 知识自行判断，仍不确定则填 [\"未知\"]\n\n### 输出格式\n\n每只股票输出一条或多条记录（多概念时多条），格式如下：\n\n```json\n{\n  \"symbol\": \"股票代码\",\n  \"name\": \"股票名称\",\n  \"note\": \"概念相关说明，要写具体\",\n  \"strength\": 5,\n  \"sub_concept\": [\"一级\", \"二级\", \"(三级)\"],\n  \"type\": \"limit_up\"\n}\n```\n\n### 规则\n\n- sub_concept 至少 2 级，最多 3 级\n- note 要写具体，说明为什么属于这个分类\n- strength 全部填 5\n- 一只股票可能有多个概念 → 输出多条记录\n- type: \"limit_up\" 或 \"limit_down\"",
+    "hot_concepts": [
+      {
+        "concept": "PCB与载板",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "PCB 工厂竞争激烈、下游压价；电子布、覆铜板产能稀缺、寡头格局、议价权极强，涨价带来的利润增量全部留在上游，机构优先抱团材料标的，行情强度远超 PCB 制造。算力硬件核心上游：AI 主线贯穿全年，GPU、光模块炒作完成后，资金挖掘上游 “卡脖子材料”，属于算力补涨主线；国产替代逻辑：高端高频覆铜板、低介电电子布长期被日、台垄断，国内生益、南亚、宏和、华正等突破高端认证，进入华为、国产算力供应链，政策加持；供需缺口持续性强：机构一致判断紧缺格局至少延续至 2027 年，不是短期脉冲行情，资金愿意中长期持仓、反复做波段，调整后快速反弹封板。",
+        "items": []
+      },
+      {
+        "concept": "玻璃概念",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "传统浮法玻璃是供给收缩周期修复，玻璃基板（TGV 超薄电子玻璃）是 AI 算力 + CPO 先进封装成长主线",
+        "items": []
+      },
+      {
+        "concept": "陶瓷概念",
+        "parent_path": [
+          "AI硬件"
+        ],
+        "note": "MLCC（陶瓷电容）+ 先进陶瓷基板（氮化铝 / 氧化铝）+ 陶瓷粉体三条细分共振，全部绑定 AI 算力刚需、供需紧缺、涨价周期、国产替代四重硬逻辑。需求端：AI 服务器带来十倍级增量，彻底重塑行业天花板。供给端：结构性紧缺，全球涨价周期持续到 2028 年。国产替代巨大空间，估值从周期股切换成长股。氮化铝陶瓷基板：1.6T/3.2T 光模块硬性刚需。SiC 功率半导体氮化硅陶瓷基板。MLCC 高纯钛酸钡陶瓷粉体。陶瓷封装管壳",
+        "items": []
+      },
+      {
+        "concept": "光刻胶及辅材",
+        "parent_path": [
+          "半导体",
+          "半导体材料"
+        ],
+        "note": "日本供给收紧，高端光刻胶出现实质性供需缺口。国产替代从 “概念测试” 进入批量商用质变（最核心基本面）。AI 先进封装新增海量需求",
+        "items": []
+      },
+      {
+        "concept": "存储芯片",
+        "parent_path": [],
+        "note": "存储芯片是 AI 算力硬件的核心上游，供需缺口持续性强，国产替代空间大",
+        "items": []
+      }
+    ],
+    "group": 5,
+    "group_total": 7
+  },
+  "stocks": [
+    {
+      "code": "000636.SZ",
+      "name": "风华高科",
+      "concepts": [
+        "MLCC",
+        "AI算力"
+      ],
+      "primary_concept": "AI算力",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "元器件与材料",
+            "电容概念"
+          ],
+          "note": "国内 MLCC 龙头，已量产 01005 超小型 MLCC 适配 AI 服务器/手机，AI 服务器单机 MLCC 用量是手机 10 倍以上，产能持续扩张"
+        },
+        {
+          "sub_concept": [
+            "AI硬件",
+            "陶瓷概念",
+            "MLCC"
+          ],
+          "note": "国内MLCC龙头，已量产01005超小型MLCC适配AI服务器/手机，AI服务器单机MLCC用量是手机10倍以上，产能持续扩张"
+        }
+      ],
+      "change_rate": 10.0028,
+      "type": "涨停",
+      "first_limit_up_time": 1782365112,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 12.5367,
+      "currency_value": 92121384000.0,
+      "order_amount": 183542170.0
+    },
+    {
+      "code": "001309.SZ",
+      "name": "德明利",
+      "concepts": [
+        "存储芯片",
+        "企业级SSD"
+      ],
+      "primary_concept": "存储芯片",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "存储芯片",
+            "存储主控"
+          ],
+          "note": "国内存储主控芯片和模组厂商，自研SSD/eMMC/SD卡主控芯片；自研主控SSD已量产"
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782365211,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 12.3026,
+      "currency_value": 146939110000.0,
+      "order_amount": 98149887.0
+    },
+    {
+      "code": "688381.SH",
+      "name": "帝奥微",
+      "concepts": [
+        "模拟芯片",
+        "光模块",
+        "人形机器人"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "模拟芯片",
+            "信号链"
+          ],
+          "note": "国内模拟芯片厂商，产品覆盖信号链（运放/比较器/模拟开关）和电源管理；信号链以高性能模拟开关为特色"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782365712,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 12.6846,
+      "currency_value": 12845250000.0,
+      "order_amount": 3944192.4
+    },
+    {
+      "code": "002141.SZ",
+      "name": "贤丰控股",
+      "concepts": [
+        "PCB上游",
+        "覆铜板",
+        "盐湖提锂参股"
+      ],
+      "primary_concept": "覆铜板",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "PCB与载板",
+            "覆铜板"
+          ],
+          "note": "2025 年覆铜板营收占比 64.81% 带动扭亏；子公司高硕航宇年产能 720 万张，产品含无铅无卤 FR-4，适配 AI 服务器 PCB；2026 年产线满产、订单充足"
+        }
+      ],
+      "change_rate": 10.084,
+      "type": "涨停",
+      "first_limit_up_time": 1782367716,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 20.1265,
+      "currency_value": 5412583600.0,
+      "order_amount": 16239771.0
+    },
+    {
+      "code": "600668.SH",
+      "name": "尖峰集团",
+      "concepts": [
+        "创新药",
+        "水泥"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 10.0287,
+      "type": "涨停",
+      "first_limit_up_time": 1782368011,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.358,
+      "currency_value": 3171076600.0,
+      "order_amount": 1599744.0
+    },
+    {
+      "code": "000766.SZ",
+      "name": "通化金马",
+      "concepts": [
+        "阿尔茨海默症新药",
+        "创新药",
+        "商业化准备"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [],
+      "change_rate": 10.0041,
+      "type": "涨停",
+      "first_limit_up_time": 1782368421,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.1898,
+      "currency_value": 25705464000.0,
+      "order_amount": 17479311.0
+    },
+    {
+      "code": "603019.SH",
+      "name": "中科曙光",
+      "concepts": [
+        "超算登顶",
+        "存储破纪录",
+        "终止减持"
+      ],
+      "primary_concept": "终止减持",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "整机组装与算力服务",
+            "服务器整机"
+          ],
+          "note": "高性能计算/AI 服务器，国产算力基础设施核心供应商"
+        }
+      ],
+      "change_rate": 9.9966,
+      "type": "涨停",
+      "first_limit_up_time": 1782369370,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.0049,
+      "currency_value": 143115980000.0,
+      "order_amount": 566649640.0
+    }
+  ]
+}

@@ -1,0 +1,1357 @@
+{
+  "_meta": {
+    "date": "2026-06-26",
+    "stage": "中间产物 — 噪音过滤 + concepts_all.json 匹配完成，待 LLM 分析产出最终 sub_concept",
+    "spec_ref": "specs/数据处理/02-数据加工/02-LLM加工/涨停题材分组.md",
+    "reference_coverage": {
+      "matched": 16,
+      "unmatched": 14,
+      "rate": 53.3
+    }
+  },
+  "stocks_with_concepts": [
+    {
+      "code": "000823.SZ",
+      "name": "超声电子",
+      "concepts": [
+        "转债摘牌",
+        "PCB",
+        "覆铜板",
+        "算力硬件"
+      ],
+      "primary_concept": "覆铜板",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "PCB与载板",
+            "覆铜板"
+          ],
+          "note": "PCB和覆铜板制造企业，产品覆盖多层板/HDI/柔性板，转债完成赎回优化财务结构"
+        }
+      ],
+      "change_rate": 10.0116,
+      "type": "涨停",
+      "first_limit_up_time": 1782437100,
+      "high_days": "3板",
+      "consecutive_boards": 3,
+      "turnover_rate": 17.8575,
+      "currency_value": 16931769000.0,
+      "order_amount": 131188561.0
+    },
+    {
+      "code": "600228.SH",
+      "name": "返利科技",
+      "concepts": [
+        "控制权变更",
+        "复牌",
+        "在线导购"
+      ],
+      "primary_concept": "复牌",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI应用",
+            "AI电商"
+          ],
+          "note": "电商导购返利平台，AI电商导购/AI比价/AI优惠推荐，连接电商平台和消费者"
+        },
+        {
+          "sub_concept": [
+            "消费",
+            "电商"
+          ],
+          "note": "在线导购返利平台，苹果App Store生态相关，受益消费复苏和线上导购需求增长"
+        }
+      ],
+      "change_rate": 9.9898,
+      "type": "涨停",
+      "first_limit_up_time": 1782437103,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 0.1429,
+      "currency_value": 4489041100.0,
+      "order_amount": 173294580.0
+    },
+    {
+      "code": "001289.SZ",
+      "name": "龙源电力",
+      "concepts": [
+        "风电",
+        "分红"
+      ],
+      "primary_concept": "风电",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电力",
+            "风电运营"
+          ],
+          "note": "国家能源集团旗下，全球最大风电运营商，风电装机超3000万千瓦"
+        }
+      ],
+      "change_rate": 10.0188,
+      "type": "涨停",
+      "first_limit_up_time": 1782437433,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 0.1124,
+      "currency_value": 88586783000.0,
+      "order_amount": 21401947.0
+    },
+    {
+      "code": "605366.SH",
+      "name": "宏柏新材",
+      "concepts": [
+        "光纤概念",
+        "高纯四氯化硅",
+        "含硫硅烷",
+        "券商推荐"
+      ],
+      "primary_concept": "光纤概念",
+      "real_concepts": [],
+      "change_rate": 10.023,
+      "type": "涨停",
+      "first_limit_up_time": 1782437484,
+      "high_days": "4板",
+      "consecutive_boards": 4,
+      "turnover_rate": 19.5887,
+      "currency_value": 11113262300.0,
+      "order_amount": 9035816.8
+    },
+    {
+      "code": "002965.SZ",
+      "name": "祥鑫科技",
+      "concepts": [
+        "收购酷尔芯",
+        "液冷服务器",
+        "人形机器人"
+      ],
+      "primary_concept": "液冷服务器",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电池",
+            "结构件"
+          ],
+          "note": "电池箱体+结构件+汽车冲压件，宁德时代/比亚迪供应链"
+        }
+      ],
+      "change_rate": 10.0085,
+      "type": "涨停",
+      "first_limit_up_time": 1782437493,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 12.1214,
+      "currency_value": 9878767000.0,
+      "order_amount": 32674232.0
+    },
+    {
+      "code": "002141.SZ",
+      "name": "贤丰控股",
+      "concepts": [
+        "PCB上游",
+        "覆铜板",
+        "盐湖提锂参股"
+      ],
+      "primary_concept": "覆铜板",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI硬件",
+            "PCB与载板",
+            "覆铜板"
+          ],
+          "note": "2025 年覆铜板营收占比 64.81% 带动扭亏；子公司高硕航宇年产能 720 万张，产品含无铅无卤 FR-4，适配 AI 服务器 PCB；2026 年产线满产、订单充足"
+        }
+      ],
+      "change_rate": 9.9237,
+      "type": "涨停",
+      "first_limit_up_time": 1782437592,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 24.422,
+      "currency_value": 5949710200.0,
+      "order_amount": 14935680.0
+    },
+    {
+      "code": "002253.SZ",
+      "name": "川大智胜",
+      "concepts": [
+        "复牌",
+        "低空经济",
+        "军工射频"
+      ],
+      "primary_concept": "复牌",
+      "real_concepts": [],
+      "change_rate": 10.0202,
+      "type": "涨停",
+      "first_limit_up_time": 1782437625,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.0032,
+      "currency_value": 2282145700.0,
+      "order_amount": 28232108.0
+    },
+    {
+      "code": "000620.SZ",
+      "name": "盈新发展",
+      "concepts": [
+        "存储芯片",
+        "封装测试",
+        "战略转型"
+      ],
+      "primary_concept": "存储芯片",
+      "real_concepts": [],
+      "change_rate": 9.9678,
+      "type": "涨停",
+      "first_limit_up_time": 1782437649,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 16.9584,
+      "currency_value": 15977381000.0,
+      "order_amount": 54018216.0
+    },
+    {
+      "code": "603163.SH",
+      "name": "圣晖集成",
+      "concepts": [
+        "可转债申请通过",
+        "半导体洁净室",
+        "东南亚PCB"
+      ],
+      "primary_concept": "半导体洁净室",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "存储芯片",
+            "洁净室工程"
+          ],
+          "note": "国内洁净室工程专业厂商，台湾圣晖旗下，聚焦半导体/光电/医药洁净室；与亚翔集成为洁净室工程双龙头，客户含中芯国际/长江存储/合肥长鑫等"
+        }
+      ],
+      "change_rate": 10.0041,
+      "type": "涨停",
+      "first_limit_up_time": 1782437999,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.6841,
+      "currency_value": 13558000000.0,
+      "order_amount": 50178158.0
+    },
+    {
+      "code": "601016.SH",
+      "name": "节能风电",
+      "concepts": [
+        "绿色电力",
+        "储能",
+        "风电"
+      ],
+      "primary_concept": "风电",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电力",
+            "风电运营"
+          ],
+          "note": "中节能旗下风电运营平台，专注风力发电开发运营，陆上风电为主"
+        }
+      ],
+      "change_rate": 10.0559,
+      "type": "涨停",
+      "first_limit_up_time": 1782438113,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.6757,
+      "currency_value": 23790728000.0,
+      "order_amount": 103609037.0
+    },
+    {
+      "code": "002129.SZ",
+      "name": "TCL中环",
+      "concepts": [
+        "半导体硅片",
+        "光伏硅片"
+      ],
+      "primary_concept": "半导体硅片",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "光伏",
+            "硅料与硅片"
+          ],
+          "note": "硅片双龙头之一，G12大尺寸硅片（210mm）开创者，硅片产能超100GW，半导体硅片+光伏硅片双布局"
+        },
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体材料",
+            "硅片/衬底"
+          ],
+          "note": "光伏硅片双寡头之一，同时布局半导体大硅片；半导体硅片覆盖4-12英寸，8英寸及以下已规模化量产，12英寸产能爬坡中"
+        }
+      ],
+      "change_rate": 10.0295,
+      "type": "涨停",
+      "first_limit_up_time": 1782438360,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 12.8488,
+      "currency_value": 45205136000.0,
+      "order_amount": 185312200.0
+    },
+    {
+      "code": "002559.SZ",
+      "name": "亚威股份",
+      "concepts": [
+        "参股半导体检测公司",
+        "工业母机",
+        "机器人",
+        "海外并购"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 10.0089,
+      "type": "涨停",
+      "first_limit_up_time": 1782438378,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 21.8946,
+      "currency_value": 6204301700.0,
+      "order_amount": 34247651.0
+    },
+    {
+      "code": "600481.SH",
+      "name": "双良节能",
+      "concepts": [
+        "硅片",
+        "光伏",
+        "液冷服务器"
+      ],
+      "primary_concept": "液冷服务器",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "光伏",
+            "硅料与硅片"
+          ],
+          "note": "大尺寸硅片新势力，从溴冷机+空冷器节能设备切入光伏硅片，产能快速扩张至40GW+，同时布局还原炉等硅料设备"
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782438391,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.9329,
+      "currency_value": 9990638800.0,
+      "order_amount": 51603112.0
+    },
+    {
+      "code": "603261.SH",
+      "name": "立航科技",
+      "concepts": [
+        "航空装备",
+        "低空经济"
+      ],
+      "primary_concept": "低空经济",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "军工",
+            "航空装备"
+          ],
+          "note": "主营航空装备研发制造，覆盖飞机地面保障设备、航空器检测试验设备，A股唯一主营该细分赛道标的"
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782438593,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.2904,
+      "currency_value": 4433287300.0,
+      "order_amount": 36562240.0
+    },
+    {
+      "code": "603270.SH",
+      "name": "金帝股份",
+      "concepts": [
+        "半导体散热片",
+        "关节模组",
+        "人形机器人",
+        "精密冲压"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [],
+      "change_rate": 9.993,
+      "type": "涨停",
+      "first_limit_up_time": 1782438961,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.962,
+      "currency_value": 2233939500.0,
+      "order_amount": 40620002.0
+    },
+    {
+      "code": "301349.SZ",
+      "name": "信德新材",
+      "concepts": [
+        "光纤概念",
+        "负极包覆材料",
+        "碳纤维"
+      ],
+      "primary_concept": "光纤概念",
+      "real_concepts": [],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782439119,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 13.9435,
+      "currency_value": 8506221800.0,
+      "order_amount": 76834019.0
+    },
+    {
+      "code": "601133.SH",
+      "name": "柏诚股份",
+      "concepts": [
+        "半导体洁净室",
+        "OLED洁净室",
+        "订单新高",
+        "存储芯片"
+      ],
+      "primary_concept": "半导体洁净室",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782439325,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.0643,
+      "currency_value": 20073525000.0,
+      "order_amount": 36090269.0
+    },
+    {
+      "code": "001270.SZ",
+      "name": "铖昌科技",
+      "concepts": [
+        "商业航天",
+        "相控阵T/R芯片",
+        "卫星通信"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "军工",
+            "军工电子"
+          ],
+          "note": "相控阵T/R芯片核心供应商，星载/机载/舰载相控阵雷达核心器件，军用相控阵技术壁垒极高"
+        },
+        {
+          "sub_concept": [
+            "商业航天",
+            "卫星制造"
+          ],
+          "note": "相控阵T/R芯片核心供应商，卫星互联网星载天线和地面终端核心器件，低轨卫星星座大规模组网核心受益标的，技术壁垒极高"
+        }
+      ],
+      "change_rate": 10.0039,
+      "type": "涨停",
+      "first_limit_up_time": 1782440517,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.3239,
+      "currency_value": 28555718000.0,
+      "order_amount": 119128992.0
+    },
+    {
+      "code": "001400.SZ",
+      "name": "江顺科技",
+      "concepts": [
+        "3D打印",
+        "商业航天",
+        "液冷服务器",
+        "铝挤压模具"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [],
+      "change_rate": 10.0019,
+      "type": "涨停",
+      "first_limit_up_time": 1782442968,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 8.5921,
+      "currency_value": 5333728200.0,
+      "order_amount": 74118880.0
+    },
+    {
+      "code": "600343.SH",
+      "name": "航天动力",
+      "concepts": [
+        "商业航天",
+        "氢能",
+        "航天央企"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "商业航天",
+            "火箭发动机"
+          ],
+          "note": "航天科技六院旗下，液体火箭发动机核心供应商，产品涵盖涡轮泵、阀门等发动机关键部件，配套长征系列及民营商业火箭"
+        }
+      ],
+      "change_rate": 10.0084,
+      "type": "涨停",
+      "first_limit_up_time": 1782443095,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.6963,
+      "currency_value": 16765681000.0,
+      "order_amount": 80557796.0
+    },
+    {
+      "code": "002180.SZ",
+      "name": "奔图科技",
+      "concepts": [
+        "集成电路设计",
+        "机器人",
+        "打印机"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 9.9773,
+      "type": "涨停",
+      "first_limit_up_time": 1782450696,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.6823,
+      "currency_value": 19792183000.0,
+      "order_amount": 77662371.0
+    },
+    {
+      "code": "003033.SZ",
+      "name": "征和工业",
+      "concepts": [
+        "人形机器人",
+        "灵巧手",
+        "链传动龙头",
+        "张雪机车合作"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [],
+      "change_rate": 9.9962,
+      "type": "涨停",
+      "first_limit_up_time": 1782451002,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.4439,
+      "currency_value": 4629033000.0,
+      "order_amount": 48208797.0
+    },
+    {
+      "code": "603722.SH",
+      "name": "阿科力",
+      "concepts": [
+        "COC放量",
+        "半导体材料",
+        "特种高耐热树脂",
+        "航空航天"
+      ],
+      "primary_concept": "半导体材料",
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782451089,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.9453,
+      "currency_value": 3789724800.0,
+      "order_amount": 47274480.0
+    },
+    {
+      "code": "688432.SH",
+      "name": "有研硅",
+      "concepts": [
+        "半导体硅片",
+        "硅片涨价预期",
+        "拟收购晶隆半导体"
+      ],
+      "primary_concept": "半导体硅片",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体材料",
+            "硅片/衬底"
+          ],
+          "note": "国内半导体硅片老牌厂商，产品覆盖6/8英寸抛光片/外延片及刻蚀用硅电极材料；另有子公司有研亿金做高纯金属靶材，半导体材料平台型公司"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782451160,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.9146,
+      "currency_value": 38634327000.0,
+      "order_amount": 55187122.0
+    },
+    {
+      "code": "603194.SH",
+      "name": "中力股份",
+      "concepts": [
+        "机器人",
+        "数智物流项目",
+        "股东减持落地"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 9.9881,
+      "type": "涨停",
+      "first_limit_up_time": 1782451838,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.8493,
+      "currency_value": 5829612800.0,
+      "order_amount": 15368374.0
+    },
+    {
+      "code": "600118.SH",
+      "name": "中国卫星",
+      "concepts": [
+        "商业航天",
+        "卫星",
+        "一季度营收增"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "商业航天",
+            "卫星制造"
+          ],
+          "note": "航天科技五院旗下，国内微小卫星制造绝对龙头，承担低轨卫星星座批量研制任务，卫星平台+载荷一体化能力国内领先"
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782452058,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.6244,
+      "currency_value": 91962180000.0,
+      "order_amount": 123476051.0
+    },
+    {
+      "code": "603155.SH",
+      "name": "新亚强",
+      "concepts": [
+        "半导体材料",
+        "高纯四氯化硅",
+        "光纤概念",
+        "锂电池"
+      ],
+      "primary_concept": "光纤概念",
+      "real_concepts": [],
+      "change_rate": 9.9826,
+      "type": "涨停",
+      "first_limit_up_time": 1782452154,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.6346,
+      "currency_value": 8002037500.0,
+      "order_amount": 72171741.0
+    },
+    {
+      "code": "300540.SZ",
+      "name": "蜀道装备",
+      "concepts": [
+        "商业航天",
+        "氦气",
+        "空分装置中标"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [],
+      "change_rate": 19.9843,
+      "type": "涨停",
+      "first_limit_up_time": 1782452163,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 17.7342,
+      "currency_value": 6305179800.0,
+      "order_amount": 93559360.0
+    },
+    {
+      "code": "688596.SH",
+      "name": "正帆科技",
+      "concepts": [
+        "碳化硅陶瓷",
+        "半导体设备"
+      ],
+      "primary_concept": "半导体设备",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体材料",
+            "电子特气"
+          ],
+          "note": "国内半导体高纯介质供应系统龙头，为晶圆厂提供高纯气体/化学品输送系统（CAPEX）；同时切入电子特气和电子级化学品（OPEX耗材），平台型增长模式"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782453084,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 15.0649,
+      "currency_value": 16536096000.0,
+      "order_amount": 52879632.0
+    },
+    {
+      "code": "688409.SH",
+      "name": "富创精密",
+      "concepts": [
+        "半导体设备"
+      ],
+      "primary_concept": "半导体设备",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "半导体设备",
+            "设备零部件"
+          ],
+          "note": "国内半导体设备精密零部件龙头，已进入AMAT/Lam Research/TEL等全球设备巨头供应链；同时配套北方华创/中微公司等国内厂商"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1782456938,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.9028,
+      "currency_value": 84146720000.0,
+      "order_amount": 533257920.0
+    }
+  ],
+  "signal_concepts": {
+    "覆铜板": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "000823.SZ",
+        "002141.SZ"
+      ]
+    },
+    "复牌": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "600228.SH",
+        "002253.SZ"
+      ]
+    },
+    "风电": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "001289.SZ",
+        "601016.SH"
+      ]
+    },
+    "光纤概念": {
+      "stock_count": 3,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "stocks": [
+        "605366.SH",
+        "301349.SZ",
+        "603155.SH"
+      ]
+    },
+    "高纯四氯化硅": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "605366.SH",
+        "603155.SH"
+      ]
+    },
+    "液冷服务器": {
+      "stock_count": 3,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "stocks": [
+        "002965.SZ",
+        "600481.SH",
+        "001400.SZ"
+      ]
+    },
+    "人形机器人": {
+      "stock_count": 3,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "stocks": [
+        "002965.SZ",
+        "603270.SH",
+        "003033.SZ"
+      ]
+    },
+    "低空经济": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002253.SZ",
+        "603261.SH"
+      ]
+    },
+    "存储芯片": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "000620.SZ",
+        "601133.SH"
+      ]
+    },
+    "半导体洁净室": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "603163.SH",
+        "601133.SH"
+      ]
+    },
+    "半导体硅片": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "002129.SZ",
+        "688432.SH"
+      ]
+    },
+    "机器人": {
+      "stock_count": 3,
+      "limit_up_count": 3,
+      "limit_down_count": 0,
+      "stocks": [
+        "002559.SZ",
+        "002180.SZ",
+        "603194.SH"
+      ]
+    },
+    "商业航天": {
+      "stock_count": 5,
+      "limit_up_count": 5,
+      "limit_down_count": 0,
+      "stocks": [
+        "001270.SZ",
+        "001400.SZ",
+        "600343.SH",
+        "600118.SH",
+        "300540.SZ"
+      ]
+    },
+    "半导体材料": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "603722.SH",
+        "603155.SH"
+      ]
+    },
+    "半导体设备": {
+      "stock_count": 2,
+      "limit_up_count": 2,
+      "limit_down_count": 0,
+      "stocks": [
+        "688596.SH",
+        "688409.SH"
+      ]
+    }
+  },
+  "noise_only_stocks": [],
+  "unclassified": [
+    {
+      "code": "002674.SZ",
+      "name": "兴业科技",
+      "change_rate": 9.9962,
+      "type": "涨停",
+      "tags": [
+        "磷化铟收购",
+        "机器人电子皮肤",
+        "汽车内饰皮革"
+      ]
+    },
+    {
+      "code": "603956.SH",
+      "name": "威派格",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "液冷泵",
+        "六张网建设",
+        "智慧水务"
+      ]
+    },
+    {
+      "code": "002568.SZ",
+      "name": "百润股份",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "中报预增",
+        "预调鸡尾酒",
+        "威士忌"
+      ]
+    },
+    {
+      "code": "603861.SH",
+      "name": "白云电器",
+      "change_rate": 10.0386,
+      "type": "涨停",
+      "tags": [
+        "AIDC直流配电",
+        "变压器出海",
+        "电网设备"
+      ]
+    },
+    {
+      "code": "603687.SH",
+      "name": "大胜达",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "GPU投资进展",
+        "钙钛矿设备",
+        "纸包装"
+      ]
+    },
+    {
+      "code": "600545.SH",
+      "name": "卓郎智能",
+      "change_rate": 10.0775,
+      "type": "涨停",
+      "tags": [
+        "电子布设备",
+        "华为合作",
+        "纺织机械"
+      ]
+    },
+    {
+      "code": "001210.SZ",
+      "name": "金房能源",
+      "change_rate": 10.0185,
+      "type": "涨停",
+      "tags": [
+        "成功竞拍",
+        "数据中心供冷",
+        "综合能源服务",
+        "新能源供热"
+      ]
+    },
+    {
+      "code": "002106.SZ",
+      "name": "莱宝高科",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "玻璃基板封装",
+        "MED电子纸",
+        "触摸屏龙头"
+      ]
+    },
+    {
+      "code": "600962.SH",
+      "name": "国投中鲁",
+      "change_rate": 10.0152,
+      "type": "涨停",
+      "tags": [
+        "半导体工程",
+        "并购重组",
+        "浓缩果汁"
+      ]
+    },
+    {
+      "code": "603650.SH",
+      "name": "彤程新材",
+      "change_rate": 9.9962,
+      "type": "涨停",
+      "tags": [
+        "光刻胶树脂",
+        "H股上市"
+      ]
+    },
+    {
+      "code": "600367.SH",
+      "name": "红星发展",
+      "change_rate": 10.0038,
+      "type": "涨停",
+      "tags": [
+        "玻璃基板上游",
+        "MLCC上游",
+        "碳酸锶"
+      ]
+    },
+    {
+      "code": "600552.SH",
+      "name": "凯盛科技",
+      "change_rate": 9.9963,
+      "type": "涨停",
+      "tags": [
+        "玻璃基板TGV",
+        "有色锆",
+        "超薄柔性玻璃UTG"
+      ]
+    },
+    {
+      "code": "603977.SH",
+      "name": "国泰集团",
+      "change_rate": 9.9786,
+      "type": "涨停",
+      "tags": [
+        "钽铌涨价",
+        "小型固体火箭"
+      ]
+    },
+    {
+      "code": "603928.SH",
+      "name": "兴业股份",
+      "change_rate": 9.982,
+      "type": "涨停",
+      "tags": [
+        "铸造树脂",
+        "光刻胶"
+      ]
+    },
+    {
+      "code": "301051.SZ",
+      "name": "信濠光电",
+      "change_rate": 19.9771,
+      "type": "涨停",
+      "tags": [
+        "玻璃盖板",
+        "储能调频",
+        "双主业"
+      ]
+    },
+    {
+      "code": "603903.SH",
+      "name": "中持股份",
+      "change_rate": 10.0257,
+      "type": "涨停",
+      "tags": [
+        "芯长征入主",
+        "功率半导体",
+        "污水处理"
+      ]
+    },
+    {
+      "code": "001389.SZ",
+      "name": "广合科技",
+      "change_rate": 10.0,
+      "type": "涨停",
+      "tags": [
+        "算力PCB",
+        "拟60亿投建总部",
+        "可转债预案"
+      ]
+    },
+    {
+      "code": "002354.SZ",
+      "name": "天娱数科",
+      "change_rate": 9.9626,
+      "type": "涨停",
+      "tags": [
+        "具身智能数据集",
+        "3D视觉",
+        "算力租赁",
+        "AI营销"
+      ]
+    },
+    {
+      "code": "002962.SZ",
+      "name": "五方光电",
+      "change_rate": 10.0114,
+      "type": "涨停",
+      "tags": [
+        "TGV产品",
+        "光学光电子",
+        "AR/VR"
+      ]
+    },
+    {
+      "code": "300162.SZ",
+      "name": "雷曼光电",
+      "change_rate": 19.9802,
+      "type": "涨停",
+      "tags": [
+        "玻璃基Micro LED",
+        "先进封装",
+        "LED超高清显"
+      ]
+    },
+    {
+      "code": "603698.SH",
+      "name": "航天工程",
+      "change_rate": 10.0025,
+      "type": "涨停",
+      "tags": [
+        "实控人航天科技",
+        "绿氢工程",
+        "煤气化"
+      ]
+    },
+    {
+      "code": "601369.SH",
+      "name": "陕鼓动力",
+      "change_rate": 9.9635,
+      "type": "涨停",
+      "tags": [
+        "压缩空气储能",
+        "透平机械"
+      ]
+    },
+    {
+      "code": "600539.SH",
+      "name": "狮头股份",
+      "change_rate": 9.9846,
+      "type": "涨停",
+      "tags": [
+        "拟收购利珀科技",
+        "半导体封装",
+        "机器视觉",
+        "AI应用"
+      ]
+    },
+    {
+      "code": "605296.SH",
+      "name": "神农集团",
+      "change_rate": 10.0202,
+      "type": "涨停",
+      "tags": [
+        "猪肉",
+        "产能调控",
+        "全产业链",
+        "成本优势"
+      ]
+    },
+    {
+      "code": "002119.SZ",
+      "name": "康强电子",
+      "change_rate": 10.0149,
+      "type": "涨停",
+      "tags": [
+        "半导体封装材料",
+        "引线框架"
+      ]
+    },
+    {
+      "code": "300264.SZ",
+      "name": "佳创视讯",
+      "change_rate": 20.0246,
+      "type": "涨停",
+      "tags": [
+        "音视频软件",
+        "《仙剑奇侠传》IP",
+        "MR"
+      ]
+    },
+    {
+      "code": "605399.SH",
+      "name": "晨光新材",
+      "change_rate": 10.0154,
+      "type": "涨停",
+      "tags": [
+        "功能性硅烷",
+        "气凝胶",
+        "产能释放",
+        "回购注销"
+      ]
+    },
+    {
+      "code": "002910.SZ",
+      "name": "庄园牧场",
+      "change_rate": 10.0448,
+      "type": "涨停",
+      "tags": [
+        "乳业龙头"
+      ]
+    },
+    {
+      "code": "001215.SZ",
+      "name": "千味央厨",
+      "change_rate": 9.9972,
+      "type": "涨停",
+      "tags": [
+        "预制菜",
+        "对外投资"
+      ]
+    },
+    {
+      "code": "002930.SZ",
+      "name": "宏川智慧",
+      "change_rate": 10.035,
+      "type": "涨停",
+      "tags": [
+        "长兴半导体",
+        "存储",
+        "石化仓储",
+        "转债兑付"
+      ]
+    }
+  ],
+  "noise_stats": {
+    "过滤标签总数": 22,
+    "涉及股票数": 21,
+    "高频噪音标签": {
+      "摘帽": 4,
+      "央企": 4,
+      "业绩增长": 2,
+      "一季报扭亏": 2,
+      "青岛国资": 1,
+      "江西国资": 1,
+      "中标": 1,
+      "国企改革": 1,
+      "产能满产": 1,
+      "回购": 1,
+      "券商看好": 1,
+      "甘肃国资": 1,
+      "一季报增长": 1,
+      "订单增长": 1
+    },
+    "按类别": {
+      "财务业绩": {
+        "count": 5,
+        "tags": {
+          "业绩增长": 2,
+          "一季报扭亏": 2,
+          "一季报增长": 1
+        },
+        "股票数": 21
+      },
+      "公司属性": {
+        "count": 8,
+        "tags": {
+          "央企": 4,
+          "青岛国资": 1,
+          "江西国资": 1,
+          "国企改革": 1,
+          "甘肃国资": 1
+        },
+        "股票数": 21
+      },
+      "股权事件": {
+        "count": 1,
+        "tags": {
+          "回购": 1
+        },
+        "股票数": 21
+      },
+      "经营杂项": {
+        "count": 3,
+        "tags": {
+          "中标": 1,
+          "产能满产": 1,
+          "券商看好": 1
+        },
+        "股票数": 21
+      },
+      "ST变动": {
+        "count": 4,
+        "tags": {
+          "摘帽": 4
+        },
+        "股票数": 21
+      },
+      "通用词": {
+        "count": 1,
+        "tags": {
+          "订单增长": 1
+        },
+        "股票数": 21
+      }
+    }
+  },
+  "统计": {
+    "涨停家数": 60,
+    "信号分组数": 15,
+    "噪音过滤标签数": 22,
+    "噪音only股票数": 0,
+    "unclassified股票数": 30,
+    "题材规模分布": {
+      "大题材（≥5只）": [
+        "商业航天"
+      ],
+      "中等题材（3-4只）": [
+        "人形机器人",
+        "光纤概念",
+        "机器人",
+        "液冷服务器"
+      ],
+      "小题材（<3只）": [
+        "低空经济",
+        "半导体材料",
+        "半导体洁净室",
+        "半导体硅片",
+        "半导体设备",
+        "复牌",
+        "存储芯片",
+        "覆铜板",
+        "风电",
+        "高纯四氯化硅"
+      ]
+    },
+    "最强题材": {
+      "concept": "商业航天",
+      "stock_count": 5,
+      "limit_up_count": 5,
+      "avg_change_rate": 12.0
+    },
+    "梯队完整性": {
+      "有首板有连板": [
+        "复牌",
+        "光纤概念",
+        "高纯四氯化硅",
+        "液冷服务器",
+        "人形机器人"
+      ],
+      "纯首板": [
+        "风电",
+        "低空经济",
+        "存储芯片",
+        "半导体洁净室",
+        "半导体硅片",
+        "机器人",
+        "商业航天",
+        "半导体材料",
+        "半导体设备"
+      ],
+      "纯连板": [
+        "覆铜板"
+      ]
+    },
+    "资金集中度": {
+      "前三大题材股票数占比_%": 18.3,
+      "前三大题材涨停数占比_%": 18.3
+    },
+    "情绪指标": {
+      "炸板率_%": 56.7,
+      "封板率_%": 43.3,
+      "平均换手率_%": 9.26
+    }
+  }
+}

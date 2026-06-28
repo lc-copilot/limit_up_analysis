@@ -1,0 +1,1147 @@
+{
+  "_meta": {
+    "date": "2026-06-25",
+    "stage": "最终输出 — 概念分级完成",
+    "total_unique_stocks": 102,
+    "total_records": 122,
+    "limit_up_stocks": 85,
+    "limit_down_stocks": 17,
+    "matched_by_reference": 76,
+    "filled_by_ai": 46,
+    "coverage_rate": 62.3,
+    "hot_concepts_used": [
+      "PCB与载板",
+      "玻璃概念",
+      "陶瓷概念",
+      "光刻胶及辅材",
+      "存储芯片"
+    ]
+  },
+  "stocks": [
+    {
+      "symbol": "000034.SZ",
+      "name": "神州数码",
+      "note": "华为昇腾生态核心合作伙伴，AI算力服务器分销+存储芯片，国产算力替代核心受益标的",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "算力服务",
+        "服务器整机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000048.SZ",
+      "name": "京基智农",
+      "note": "生猪养殖龙头，跨界布局机器人概念，总裁受让股份表明转型决心",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "其他"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000100.SZ",
+      "name": "TCL科技",
+      "note": "全球面板双龙头之一（TCL华星），大尺寸LCD面板市占率全球第二，玻璃基板（TGV）受益AI算力+CPO先进封装",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "玻璃概念",
+        "玻璃基板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000636.SZ",
+      "name": "风华高科",
+      "note": "国内MLCC龙头，已量产01005超小型MLCC适配AI服务器/手机，AI服务器单机MLCC用量是手机10倍以上，产能持续扩张",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "MLCC"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000636.SZ",
+      "name": "风华高科",
+      "note": "国内MLCC龙头，受益AI算力+MLCC涨价周期",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000766.SZ",
+      "name": "通化金马",
+      "note": "阿尔茨海默症新药（琥珀八氢氨吖啶片）即将商业化，创新药概念带动",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "创新药"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000783.SZ",
+      "name": "长江证券",
+      "note": "长江证券为湖北本土龙头券商，科创投资业务布局领先，受益资本市场改革及科创企业融资需求增长",
+      "strength": 5,
+      "sub_concept": [
+        "金融",
+        "证券"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000811.SZ",
+      "name": "冰轮环境",
+      "note": "旗下顿汉布什磁悬浮/高压离心冷水机组为液冷系统必备一次侧配套，已落地天河二号等超算项目",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000823.SZ",
+      "name": "超声电子",
+      "note": "PCB和覆铜板制造企业，产品覆盖多层板/HDI/柔性板，受益PCB与载板热门概念，2连板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "覆铜板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "000962.SZ",
+      "name": "东方钽业",
+      "note": "钽铌制品+电容器级钽粉+半导体靶材，受益AI服务器电容需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001330.SZ",
+      "name": "博纳影业",
+      "note": "博纳影业为国内头部民营电影公司，《四渡》定档叠加AI影视制作技术应用，全产业链布局覆盖制片/发行/院线，受益影视行业复苏",
+      "strength": 5,
+      "sub_concept": [
+        "影视"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002025.SZ",
+      "name": "航天电器",
+      "note": "航天科工十院旗下，航天级连接器/微特电机/继电器龙头，配套火箭/卫星/导弹全领域，2连板",
+      "strength": 5,
+      "sub_concept": [
+        "商业航天",
+        "火箭制造"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002025.SZ",
+      "name": "航天电器",
+      "note": "2026 年 6 月刚发布25G 系列高速并行光模块，支持 4/12/24 通道，宽温 - 40℃~+85℃，面向数据中心、半导体测试设备；",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光器件"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002056.SZ",
+      "name": "横店东磁",
+      "note": "磁性材料龙头，软磁铁氧体广泛用于电感/变压器磁芯，受益AI服务器电感需求拉动，机器人概念加持",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "磁性材料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002068.SZ",
+      "name": "黑猫股份",
+      "note": "导电炭黑龙头，布局介孔碳中试线可用于超级电容炭、硅碳负极，受益AI服务器电容需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002080.SZ",
+      "name": "中材科技",
+      "note": "特种纤维布（电子布）用于覆铜板，受益PCB与载板热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "电子布"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002141.SZ",
+      "name": "贤丰控股",
+      "note": "2025年覆铜板营收占比64.81%带动扭亏；子公司高硕航宇年产能720万张，适配AI服务器PCB，受益PCB与载板热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "覆铜板"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002254.SZ",
+      "name": "泰和新材",
+      "note": "芳纶纤维龙头，芳纶涂覆隔膜用于锂电池提高安全性，布局光纤用芳纶增强材料，光纤概念2连板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002303.SZ",
+      "name": "美盈森",
+      "note": "美盈森为消费电子包装一体化龙头，服务苹果/华为等头部客户，包装+智能包装+环保包装三轮驱动",
+      "strength": 5,
+      "sub_concept": [
+        "消费电子",
+        "其他"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002387.SZ",
+      "name": "维信诺",
+      "note": "ViP技术+AMOLED面板龙头，高世代产线布局，消费电子显示面板",
+      "strength": 5,
+      "sub_concept": [
+        "消费电子",
+        "其他"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002484.SZ",
+      "name": "江海股份",
+      "note": "AI服务器电源+超级电容，N型MLPC为国家级颠覆性技术，已批量供货浪潮、华为，通过台达切入英伟达供应链",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "服务器电源"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002484.SZ",
+      "name": "江海股份",
+      "note": "超级电容EDLC+LIC双技术路线适配高功耗算力机柜，行业稀缺国产配套标的",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002518.SZ",
+      "name": "科士达",
+      "note": "逆变器+UPS+储能，数据中心电源+液冷服务器，与宁德时代有合资公司专注储能系统集成",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "服务器电源"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002518.SZ",
+      "name": "科士达",
+      "note": "科士达为数据中心UPS/精密空调龙头，液冷温控方案覆盖AI算力机柜，与宁德时代合资布局储能系统集成",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002558.SZ",
+      "name": "巨人网络",
+      "note": "巨人网络为老牌游戏厂商，征途/IP系列贡献稳定现金流，AI基础设施布局降低研发成本、提升内容生产效率",
+      "strength": 5,
+      "sub_concept": [
+        "游戏",
+        "游戏"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002579.SZ",
+      "name": "中京电子",
+      "note": "珠海基地量产30层以上AI高多层服务器板、800G/1.6T光模块高速PCB；批量供货华为、锐捷、中际旭创，配套英伟达GB200算力整机",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002654.SZ",
+      "name": "万润科技",
+      "note": "存储芯片+LED双主业，受益存储芯片热门概念，首板",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "存储主控"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002674.SZ",
+      "name": "兴业科技",
+      "note": "收购磷化铟布局光模块上游材料，机器人电子皮肤概念，汽车内饰皮革主业",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "元器件与材料",
+        "磷化铟"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002787.SZ",
+      "name": "华源控股",
+      "note": "参股宇树科技（人形机器人）+液冷散热+半导体设备，多概念跨界，首板",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "宇树科技概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002787.SZ",
+      "name": "华源控股",
+      "note": "华源控股参股宇树科技（人形机器人），液冷散热+半导体设备跨界布局，首板受益AI算力散热需求扩散",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002842.SZ",
+      "name": "翔鹭钨业",
+      "note": "AI 大模型、智算中心、HBM 存储、3nm/5nm 先进制程带动高纯钨全链条紧缺，且暂无成熟替代材料：六氟化钨（半导体刻蚀 / 沉积特气）：全球需求年增速 14%+，日本两大龙头 2200 吨 / 年产能 2026 年 7 月永久关停，全球高端特气钨原料直接出现硬缺口，6N 高纯钨粉价格暴涨；PCB/IC 载板钨微钻：AI 服务器需要高多层、微孔 PCB，长径比 50 倍以上微钻只能用硬质合金钨材，AI 算力扩张带动钻针订单翻倍，上游钨棒材需求同步激增；高纯钨溅射靶材：先进芯片阻挡层、封装基材必备，国产替代持续推进，高纯钨材附加值大幅高于普通钨精矿。",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "元器件与材料",
+        "钨材"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002928.SZ",
+      "name": "华夏航空",
+      "note": "华夏航空为国内唯一专注支线航空的上市公司，C909（国产支线飞机）主力机型运营，受益支线航空政策支持",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "航空"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002965.SZ",
+      "name": "祥鑫科技",
+      "note": "收购酷尔芯布局液冷服务器，人形机器人概念，受益AI算力散热需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "002980.SZ",
+      "name": "华盛昌",
+      "note": "光通信测试仪器+AI眼镜概念，测量仪器龙头",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300223.SZ",
+      "name": "北京君正",
+      "note": "通过收购ISSI成为全球车载DRAM/SRAM龙头（市占率第二），存储芯片为营收核心（占比80%+），20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "NOR Flash/DRAM"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300650.SZ",
+      "name": "太龙股份",
+      "note": "存储芯片+半导体分销，受益存储芯片热门概念，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "分销"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "300819.SZ",
+      "name": "聚杰微纤",
+      "note": "电子布（超细纤维）用于覆铜板，受益PCB与载板热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "电子布"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600058.SH",
+      "name": "五矿发展",
+      "note": "五矿发展为五矿集团旗下铁合金/钢铁贸易平台，铁矿资产注入预期强烈，受益央企重组整合政策及大宗商品贸易回暖",
+      "strength": 5,
+      "sub_concept": [
+        "重组概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600141.SH",
+      "name": "兴发集团",
+      "note": "磷化铟（光模块核心材料）+液冷+存储芯片材料，磷矿资源自供，2连板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "元器件与材料",
+        "磷化铟"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600152.SH",
+      "name": "维科技术",
+      "note": "维科技术布局AIDC电源（AI数据中心电源），同时拥有钠离子电池和3C消费电池业务，新能源+AI双主线",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600184.SH",
+      "name": "光电股份",
+      "note": "兵器工业集团旗下，军用光电仪器龙头，光纤材料+光通信概念带动首板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600186.SH",
+      "name": "莲花控股",
+      "note": "主营味精/调味品为国内龙头，跨界布局算力租赁、投资阶跃星辰（AI大模型），同时涉足半导体材料",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "算力租赁"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600228.SH",
+      "name": "返利科技",
+      "note": "在线导购平台，控制权变更复牌，AI电商概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI应用",
+        "AI电商"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600237.SH",
+      "name": "铜峰电子",
+      "note": "薄膜电容器+PET铜箔，受益AI服务器电容需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600330.SH",
+      "name": "天通股份",
+      "note": "软磁铁氧体磁性材料供应商，电感/变压器核心上游磁芯材料，受益AI服务器电源需求，光模块上游+先进封装概念",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "磁性材料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600458.SH",
+      "name": "时代新材",
+      "note": "中国中车旗下，风电叶片市占率第二+半导体材料（碳化硅涂层等），超级电容概念首板",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600500.SH",
+      "name": "中化国际",
+      "note": "中化集团旗下化工新材料平台，收购南通星辰后布局PPE树脂（覆铜板上游高频基材），覆铜板基材上游核心供应商",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "树脂"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600516.SH",
+      "name": "方大炭素",
+      "note": "石墨烯散热+光纤概念+核电石墨，石墨电极龙头，受益散热材料需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600584.SH",
+      "name": "长电科技",
+      "note": "国内封测龙头全球第三，先进封装（FC-BGA/SiP/2.5D/3D/Chiplet/TSV/HBM堆叠），CPO光引擎，2连板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "封装测试",
+        "先进封装"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600667.SH",
+      "name": "太极实业",
+      "note": "存储芯片封测+SK海力士合作，半导体洁净室工程龙头",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "封装测试",
+        "先进封装"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600667.SH",
+      "name": "太极实业",
+      "note": "存储芯片洁净室工程龙头，受益存储芯片热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "洁净室工程"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600668.SH",
+      "name": "尖峰集团",
+      "note": "尖峰集团为水泥+医药双主业，医药板块布局创新药研发，水泥业务提供稳定现金流支撑创新药管线推进",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "创新药"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600857.SH",
+      "name": "宁波中百",
+      "note": "宁波中百为宁波本地零售龙头，黄金珠宝+百货零售双线经营，杭州金帝入主后有望注入新零售资源",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "零售"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600888.SH",
+      "name": "新疆众和",
+      "note": "铝电子新材料龙头，电极箔用于铝电解电容，受益AI服务器电容需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600888.SH",
+      "name": "新疆众和",
+      "note": "新疆众和为铝电子新材料龙头，半导体靶材（高纯铝靶材）国产替代核心标的，受益半导体材料自主可控",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "靶材"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600903.SH",
+      "name": "贵州燃气",
+      "note": "贵州燃气为贵州省城燃龙头，氦气（半导体/光纤关键气体）+页岩气收购布局上游资源，天然气全产业链运营",
+      "strength": 5,
+      "sub_concept": [
+        "石油和煤炭",
+        "天然气"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "600962.SH",
+      "name": "国投中鲁",
+      "note": "浓缩果汁主业，跨界半导体工程+并购重组概念，首板",
+      "strength": 5,
+      "sub_concept": [
+        "重组概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603010.SH",
+      "name": "万盛股份",
+      "note": "磷系阻燃剂龙头，PCB概念受益，泰国基地投产",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB基础材料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603019.SH",
+      "name": "中科曙光",
+      "note": "高性能计算/AI服务器，国产算力基础设施核心供应商，超算登顶+存储破纪录",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "整机组装与算力服务",
+        "服务器整机"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603063.SH",
+      "name": "禾望电气",
+      "note": "禾望电气为电力电子变频器龙头，储能变流器+光伏逆变器+氢能电解槽三线布局，受益新能源装机增长",
+      "strength": 5,
+      "sub_concept": [
+        "电力设备",
+        "电力电子"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603065.SH",
+      "name": "宿迁联盛",
+      "note": "磷化铟衬底概念（光模块核心材料），光稳定剂主业，受益光模块上游材料需求",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "元器件与材料",
+        "磷化铟"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603067.SH",
+      "name": "振华股份",
+      "note": "振华股份为全球铬盐龙头（市占率第一），布局SOFC固体氧化物燃料电池，铬盐主业受益化工涨价周期",
+      "strength": 5,
+      "sub_concept": [
+        "电池",
+        "固态电池"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603115.SH",
+      "name": "海星股份",
+      "note": "超级电容涨价+AI服务器电极箔，全球市占率第一，受益AI算力电容需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603267.SH",
+      "name": "鸿远电子",
+      "note": "军用高可靠MLCC核心供应商，布局民用MLCC及AI服务器配套，受益MLCC涨价+陶瓷概念热门",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "MLCC"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603313.SH",
+      "name": "梦百合",
+      "note": "梦百合为记忆棉家居龙头，智能床+美国产能布局，ODM/OEM出口+自主品牌双轮驱动，受益海外补库需求",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "家居"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603459.SH",
+      "name": "红板科技",
+      "note": "投建高阶HDI+1.6T光模块配套，HDI龙头，受益PCB与载板热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603500.SH",
+      "name": "祥和实业",
+      "note": "超级电容胶塞+轨交扣件龙头，高分子辐照改性",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603661.SH",
+      "name": "恒林股份",
+      "note": "投资GPU公司布局AI算力，培育钻石+家居用品出口",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "金刚石散热"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603678.SH",
+      "name": "火炬电子",
+      "note": "军用MLCC核心供应商，拓展民用MLCC及陶瓷材料，受益AI服务器MLCC需求爆发及国产替代，MLCC涨价驱动2连板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "MLCC"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603690.SH",
+      "name": "至纯科技",
+      "note": "高纯工艺系统和清洗设备双轮驱动；高纯工艺系统为晶圆厂基础设施，清洗设备已进入中芯国际/华虹等供应链",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体设备",
+        "清洗设备"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603733.SH",
+      "name": "仙鹤股份",
+      "note": "仙鹤股份为特种纸龙头，超级电容器纸打破国外垄断，产品提价周期启动，受益AI数据中心电容需求爆发",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603800.SH",
+      "name": "洪田股份",
+      "note": "PCB并购完成+电解铜箔设备+先进封装三线布局，TGV先进封装概念，受益PCB与载板热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB设备"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603929.SH",
+      "name": "亚翔集成",
+      "note": "半导体洁净室工程龙头，新加坡布局拓展海外市场",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "洁净室工程"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603956.SH",
+      "name": "威派格",
+      "note": "液冷泵+智慧水务，受益AI数据中心液冷散热需求",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "液冷"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "603989.SH",
+      "name": "艾华集团",
+      "note": "MLPC+铝电解电容龙头，AI服务器电源用电容核心供应商",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605300.SH",
+      "name": "佳禾食品",
+      "note": "佳禾食品为植物奶（燕麦奶/豆奶）龙头，B端餐饮+ C端零售双渠道，股东回馈体现管理层信心",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "食品饮料"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605318.SH",
+      "name": "法狮龙",
+      "note": "法狮龙原为集成吊顶/装配式建筑龙头，跨界布局AI智算（算力租赁），装配式建筑主业提供稳定现金流支撑转型",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "算力租赁"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605366.SH",
+      "name": "宏柏新材",
+      "note": "高纯四氯化硅是光纤预制棒核心原料，含硫硅烷为橡胶助剂龙头，3连板走光纤概念路线",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "光模块与互联",
+        "光纤光缆"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605376.SH",
+      "name": "博迁新材",
+      "note": "AI服务器单机MLCC用量是手机10倍以上，仅80nm以下超细镍粉可适配；全球第二国内龙头，高端镍粉全球市占11%+",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "陶瓷概念",
+        "MLCC"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605376.SH",
+      "name": "博迁新材",
+      "note": "超细镍粉是MLCC核心原材料，受益AI算力+MLCC涨价周期",
+      "strength": 5,
+      "sub_concept": [
+        "数据中心",
+        "电源",
+        "电容概念"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "605589.SH",
+      "name": "圣泉集团",
+      "note": "PPO树脂是高速覆铜板核心基材，先进封装用环氧树脂，可转债获批助力产能扩张",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "树脂"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688093.SH",
+      "name": "世华科技",
+      "note": "感光干膜是PCB制造核心耗材，高性能光学材料，受益PCB与载板热门概念，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "AI硬件",
+        "PCB与载板",
+        "PCB设备"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688376.SH",
+      "name": "美埃科技",
+      "note": "洁净室龙头+空气净化产品，受益半导体洁净室需求",
+      "strength": 5,
+      "sub_concept": [
+        "存储芯片",
+        "洁净室工程"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688380.SH",
+      "name": "中微半导",
+      "note": "国内MCU和SoC厂商，MCU以8位为主，用于小家电/消费电子/智能家居，存储芯片概念带动20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "数字芯片",
+        "MCU"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688381.SH",
+      "name": "帝奥微",
+      "note": "国内模拟芯片厂商，信号链（运放/比较器/模拟开关）和电源管理，光模块+人形机器人概念，20cm首板",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "模拟芯片",
+        "信号链"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "688669.SH",
+      "name": "聚石化学",
+      "note": "光刻胶树脂+钙钛矿电池材料，受益光刻胶及辅材热门概念",
+      "strength": 5,
+      "sub_concept": [
+        "半导体",
+        "半导体材料",
+        "光刻胶及辅材"
+      ],
+      "type": "limit_up"
+    },
+    {
+      "symbol": "001211.SZ",
+      "name": "双枪科技",
+      "note": "双枪科技为日用餐厨具龙头，筷子/砧板/勺铲等产品线齐全，出口+内销双渠道，消费复苏受益标的",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "家居"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002072.SZ",
+      "name": "凯瑞德",
+      "note": "凯瑞德主营煤炭贸易，煤炭供应链管理服务商，受煤炭价格波动影响较大",
+      "strength": 5,
+      "sub_concept": [
+        "石油和煤炭",
+        "煤炭"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002354.SZ",
+      "name": "天娱数科",
+      "note": "天娱数科为AI营销+数字人龙头，基于AIGC技术提供智能营销解决方案，数字人直播/客服等应用场景落地",
+      "strength": 5,
+      "sub_concept": [
+        "AI应用",
+        "AI营销"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002397.SZ",
+      "name": "梦洁股份",
+      "note": "梦洁股份为家纺行业龙头，高端床上用品品牌，线下渠道+电商双轮驱动，消费复苏受益标的",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "家居"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002687.SZ",
+      "name": "乔治白",
+      "note": "乔治白为职业装定制龙头，校服/工装/商务装全品类覆盖，B端团购业务稳定",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "服饰"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002931.SZ",
+      "name": "锋龙股份",
+      "note": "锋龙股份主营园林机械零部件，延伸布局机器人整机制造，受益机器人产业政策支持",
+      "strength": 5,
+      "sub_concept": [
+        "机器人",
+        "整机制造"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "002946.SZ",
+      "name": "新乳业",
+      "note": "新乳业为西南区域乳业龙头，低温鲜奶+酸奶为核心品类，并购整合区域乳企实现全国化布局",
+      "strength": 5,
+      "sub_concept": [
+        "消费",
+        "乳制品"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "600719.SH",
+      "name": "大连热电",
+      "note": "大连热电为大连地区热电联产龙头，供热+发电双主业，受益北方供暖需求刚性及电价市场化改革",
+      "strength": 5,
+      "sub_concept": [
+        "电力",
+        "其他"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603318.SH",
+      "name": "水发燃气",
+      "note": "水发燃气主营燃气轮机发电+天然气分销，燃气轮机运维服务受益天然气发电需求增长",
+      "strength": 5,
+      "sub_concept": [
+        "电力设备",
+        "燃气轮机"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603716.SH",
+      "name": "塞力医疗",
+      "note": "塞力医疗主业为医院 SPD 供应链 + IVD 体外诊断，创新药属于战略转型第二曲线，采用资本投资控股 + 自有渠道商业化模式，核心载体为控股子公司武汉华纪元生物，主打慢病治疗性多肽疫苗（国家 1 类生物创新药），辅以细胞治疗、数字疗法协同布局，创新药当前未贡献营收，全部处于研发阶段。",
+      "strength": 5,
+      "sub_concept": [
+        "医药",
+        "创新药"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "603790.SH",
+      "name": "雅运股份",
+      "note": "雅运股份为纺织染料助剂龙头，染料+助剂一体化布局，受益纺织服装出口复苏及染料涨价周期",
+      "strength": 5,
+      "sub_concept": [
+        "化工",
+        "染料/涂料"
+      ],
+      "type": "limit_down"
+    },
+    {
+      "symbol": "605566.SH",
+      "name": "福莱蒽特",
+      "note": "福莱蒽特为分散染料龙头，高端环保型染料研发生产，受益纺织印染行业环保趋严下的集中度提升",
+      "strength": 5,
+      "sub_concept": [
+        "化工",
+        "染料/涂料"
+      ],
+      "type": "limit_down"
+    }
+  ]
+}
