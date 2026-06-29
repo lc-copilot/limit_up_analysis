@@ -90,26 +90,29 @@ def main():
         sys.exit(1)
 
     data = json.loads(input_path.read_text(encoding="utf-8"))
-    stocks = data.get("stocks_with_concepts", [])
+    up_stocks = data.get("limit_up_stocks", [])
+    down_stocks = data.get("limit_down_stocks", [])
     unclassified = data.get("unclassified", [])
     noise_only = data.get("noise_only_stocks", [])
 
-    if not stocks:
+    if not up_stocks and not down_stocks:
         print(f"⚠ {date_str} 无股票数据")
         sys.exit(1)
 
-    # 合并所有需要分析的股票
-    all_stocks = list(stocks)  # stocks_with_concepts 已有 real_concepts
+    # 合并所有需要分析的股票（涨停在前，跌停在后）
+    all_stocks = list(up_stocks) + list(down_stocks)
 
     # 加载热门概念
     hot_concepts = load_hot_concepts()
 
-    # ── 分组策略：按涨停时间均匀分配 ──
-    # 有 first_limit_up_time 的按时间排序，没有的放最后
+    # ── 分组策略：按涨停/跌停时间均匀分配 ──
     def sort_key(s):
-        t = s.get("first_limit_up_time") or 0
-        return t
-
+        t = s.get("first_limit_up_time")
+        if t is None:
+            return (1, 0, "")
+        if isinstance(t, str):
+            return (0, 0, t)
+        return (0, t, "")
     all_stocks.sort(key=sort_key)
 
     # 分成 5 组

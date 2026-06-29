@@ -151,18 +151,20 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         return None
 
     lu = json.loads(filepath.read_text(encoding="utf-8"))
-    items = lu.get("limit_up", {}).get("items", [])
-    if not items:
-        print(f"  ⚠ {date_str} 无涨停板数据")
+    up_items = lu.get("limit_up", {}).get("items", [])
+    down_items = lu.get("limit_down", {}).get("items", [])
+    if not up_items and not down_items:
+        print(f"  ⚠ {date_str} 无涨跌停数据")
         return None
 
-    # ── 第1遍：解析标签 + 噪音过滤 ──────────
+    # ── 第1遍：解析标签 + 噪音过滤（仅涨停有 reason_type）──
     stock_info: dict[str, dict] = {}
     all_signal_tags: list[str] = []
     noise_tag_counter: Counter = Counter()
     stock_order: list[str] = []
 
-    for item in items:
+    # ── 处理涨停股 ──
+    for item in up_items:
         code = item.get("symbol", item.get("code", ""))
         if not code:
             continue
@@ -206,12 +208,38 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         if code not in stock_order:
             stock_order.append(code)
 
+    # ── 处理跌停股（无 reason_type，直接保留）──
+    for item in down_items:
+        code = item.get("symbol", item.get("code", ""))
+        if not code:
+            continue
+
+        stock_info[code] = {
+            "code": code,
+            "name": item.get("name", ""),
+            "high_days": "",
+            "consecutive_boards": None,
+            "first_limit_up_time": item.get("first_seal_time", ""),
+            "turnover_rate": item.get("turnover_rate"),
+            "change_rate": item.get("change_rate"),
+            "currency_value": None,
+            "order_amount": item.get("order_amount"),
+            "reason_type": "",
+            "tags_raw": [],
+            "tags_signal": [],
+            "tags_noise": [],
+            "is_noise_only": False,
+        }
+        if code not in stock_order:
+            stock_order.append(code)
+
     # ── 第2遍：基于 signal tags 构建概念分组 ──
     signal_tag_count = Counter(all_signal_tags)
     MAIN_CONCEPT_THRESHOLD = 2
     main_tags = {t for t, c in signal_tag_count.items() if c >= MAIN_CONCEPT_THRESHOLD}
 
-    stocks_with_concepts: list[dict[str, Any]] = []
+    limit_up_stocks: list[dict[str, Any]] = []
+    limit_down_stocks: list[dict[str, Any]] = []
     signal_concepts: dict[str, dict] = {}
     unclassified: list[dict] = []
     noise_only_stocks: list[dict] = []
@@ -220,31 +248,7 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         info = stock_info[code]
         tags_signal = info["tags_signal"]
 
-        if info["is_noise_only"]:
-            noise_only_stocks.append({
-                "code": code, "name": info["name"],
-                "change_rate": info["change_rate"], "type": "涨停",
-            })
-            continue
-
-        if not tags_signal:
-            unclassified.append({
-                "code": code, "name": info["name"],
-                "change_rate": info["change_rate"], "type": "涨停", "tags": tags_signal,
-            })
-            continue
-
-        matched = [t for t in tags_signal if t in main_tags]
-        if not matched:
-            unclassified.append({
-                "code": code, "name": info["name"],
-                "change_rate": info["change_rate"], "type": "涨停", "tags": tags_signal,
-            })
-            continue
-
-        primary = max(matched, key=lambda t: signal_tag_count[t])
-
-        # ── 匹配 concepts_all.json 产出 real_concepts ──
+        # ── 匹配 concepts_all.json 产出 real_concepts（所有股票都做）──
         real_concepts: list[dict] = []
         if code in ref_map:
             for entry in ref_map[code]:
@@ -253,25 +257,53 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
                     "note": entry["note"],
                 })
 
+        # ── 判断涨跌停类型 ──
+        is_limit_down = (not info.get("tags_raw") and not info.get("reason_type"))
+
+        # ── 标记噪音only / 未分类（仅用于统计，不丢弃股票）──
+        if info["is_noise_only"]:
+            noise_only_stocks.append({
+                "code": code, "name": info["name"],
+                "change_rate": info["change_rate"], "type": "跌停" if is_limit_down else "涨停",
+            })
+
+        matched = [t for t in tags_signal if t in main_tags]
+        if not tags_signal or not matched:
+            unclassified.append({
+                "code": code, "name": info["name"],
+                "change_rate": info["change_rate"], "type": "跌停" if is_limit_down else "涨停", "tags": tags_signal,
+            })
+
+        primary = max(matched, key=lambda t: signal_tag_count[t]) if matched else None
+
         sc_entry = {
             "code": code, "name": info["name"],
-            "concepts": tags_signal, "primary_concept": primary,
-            "real_concepts": real_concepts,  # 从 concepts_all.json 匹配到的概念
-            "change_rate": info["change_rate"], "type": "涨停",
+            "concepts": tags_signal,
+            "primary_concept": primary,
+            "real_concepts": real_concepts,
+            "change_rate": info["change_rate"], "type": "跌停" if is_limit_down else "涨停",
             "first_limit_up_time": info["first_limit_up_time"],
             "high_days": info["high_days"],
             "consecutive_boards": info["consecutive_boards"],
             "turnover_rate": info["turnover_rate"],
             "currency_value": info["currency_value"],
             "order_amount": info["order_amount"],
+            "tags_noise": info["tags_noise"],  # 保留噪音标签信息供 LLM 参考
         }
-        stocks_with_concepts.append(sc_entry)
+
+        if is_limit_down:
+            limit_down_stocks.append(sc_entry)
+        else:
+            limit_up_stocks.append(sc_entry)
 
         for tag in matched:
             if tag not in signal_concepts:
                 signal_concepts[tag] = {"stock_count": 0, "limit_up_count": 0, "limit_down_count": 0, "stocks": []}
             signal_concepts[tag]["stock_count"] += 1
-            signal_concepts[tag]["limit_up_count"] += 1
+            if is_limit_down:
+                signal_concepts[tag]["limit_down_count"] += 1
+            else:
+                signal_concepts[tag]["limit_up_count"] += 1
             signal_concepts[tag]["stocks"].append(code)
 
     # ── 噪音统计 ──────────────────────────
@@ -303,15 +335,27 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         "按类别": noise_by_category,
     }
 
-    # ── 排序 ──────────────────────────────
-    stocks_with_concepts.sort(key=lambda s: s["first_limit_up_time"] or 0)
+    # ── 排序（涨停和跌停各自按时间排序）────────────────
+    def _sort_key(s):
+        t = s.get("first_limit_up_time")
+        if t is None:
+            return (1, 0, "")
+        if isinstance(t, str):
+            # 跌停用 HH:MM:SS 字符串
+            return (0, 0, t)
+        # 涨停用 unix 时间戳
+        return (0, t, "")
+    limit_up_stocks.sort(key=_sort_key)
+    limit_down_stocks.sort(key=_sort_key)
 
     # ── 统计参考匹配覆盖率 ────────────────
-    ref_matched_count = sum(1 for s in stocks_with_concepts if s["real_concepts"])
-    ref_unmatched_count = len(stocks_with_concepts) - ref_matched_count
+    all_stocks = limit_up_stocks + limit_down_stocks
+    ref_matched_count = sum(1 for s in all_stocks if s["real_concepts"])
+    ref_unmatched_count = len(all_stocks) - ref_matched_count
 
     # ── 统计 ──────────────────────────────
-    total_limit_up = len(items)
+    total_limit_up = len(up_items)
+    total_limit_down = len(down_items)
     group_count = len(signal_concepts)
 
     large = sorted(k for k, v in signal_concepts.items() if v["stock_count"] >= 5)
@@ -324,7 +368,7 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         tc = signal_concepts[top_name]
         avg_cr = 0.0
         cr_count = 0
-        for sc in stocks_with_concepts:
+        for sc in all_stocks:
             if top_name in sc.get("concepts", []) and sc.get("change_rate") is not None:
                 avg_cr += sc["change_rate"]
                 cr_count += 1
@@ -335,7 +379,7 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
         }
 
     has_both, only_first, only_multi = [], [], []
-    code_hd = {sc["code"]: sc.get("high_days", "") for sc in stocks_with_concepts}
+    code_hd = {sc["code"]: sc.get("high_days", "") for sc in all_stocks}
     for cname, cdata in signal_concepts.items():
         has_f = any(code_hd.get(sc, "") == "首板" for sc in cdata["stocks"])
         has_m = any(code_hd.get(sc, "") and "板" in code_hd[sc] and code_hd[sc] != "首板" for sc in cdata["stocks"])
@@ -354,8 +398,8 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
     broken_rate = round(broke / hit * 100, 1) if hit > 0 else 0.0
     seal_rate = round((hit - broke) / hit * 100, 1) if hit > 0 else 0.0
 
-    tr_sum = sum(sc.get("turnover_rate") or 0 for sc in stocks_with_concepts)
-    tr_cnt = sum(1 for sc in stocks_with_concepts if sc.get("turnover_rate") is not None)
+    tr_sum = sum(sc.get("turnover_rate") or 0 for sc in all_stocks)
+    tr_cnt = sum(1 for sc in all_stocks if sc.get("turnover_rate") is not None)
     avg_tr = round(tr_sum / max(tr_cnt, 1), 2) if tr_cnt > 0 else 0.0
 
     top3 = sorted(signal_concepts.values(), key=lambda v: v["stock_count"], reverse=True)[:3]
@@ -365,6 +409,7 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
 
     statistics = {
         "涨停家数": total_limit_up,
+        "跌停家数": total_limit_down,
         "信号分组数": group_count,
         "噪音过滤标签数": sum(noise_tag_counter.values()),
         "噪音only股票数": len(noise_only_stocks),
@@ -399,10 +444,11 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
             "reference_coverage": {
                 "matched": ref_matched_count,
                 "unmatched": ref_unmatched_count,
-                "rate": round(ref_matched_count / max(len(stocks_with_concepts), 1) * 100, 1),
+                "rate": round(ref_matched_count / max(len(all_stocks), 1) * 100, 1),
             },
         },
-        "stocks_with_concepts": stocks_with_concepts,
+        "limit_up_stocks": limit_up_stocks,
+        "limit_down_stocks": limit_down_stocks,
         "signal_concepts": signal_concepts,
         "noise_only_stocks": noise_only_stocks,
         "unclassified": unclassified,
@@ -453,7 +499,7 @@ def main():
         stats = result["统计"]
         ns = result["noise_stats"]
         rc = result["_meta"].get("reference_coverage", {})
-        print(f"  ✓ {date_str}: {stats['涨停家数']}只涨停, "
+        print(f"  ✓ {date_str}: {stats['涨停家数']}只涨停+{stats['跌停家数']}只跌停, "
               f"{stats['信号分组数']}个信号组, "
               f"噪音{ns['过滤标签总数']}个标签, "
               f"最强={stats['最强题材'].get('concept','N/A')}, "
