@@ -47,6 +47,18 @@ LIMIT_DOWN_URL = (
 PAGE_SIZE = 100
 TIMEOUT = 15
 
+# 板块分组 API（涨停简图 → 概念归属）
+BOARD_GROUP_URL = (
+    "https://ozone.10jqka.com.cn/open/api/draw_lots/v1/rank/board_group_data"
+    "?date={date}"
+)
+
+# 板块涨停排行 API（涨停原因详情）
+BLOCK_TOP_URL = (
+    "https://data.10jqka.com.cn/dataapi/limit_up/block_top"
+    "?filter=HS%2CGEM2STAR&date={date}"
+)
+
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
@@ -94,6 +106,8 @@ FIELDS_DOC: dict[str, str] = {
     "limit_down.market.limit_down_history_num": "昨日跌停数",
     "limit_down.market.limit_down_open_num": "今日炸跌板数",
     "limit_down.error": "API 错误信息(null=正常)",
+    "limit_up.items[].concept": "所属概念(来自涨停简图)",
+    "limit_up.items[].reason_info": "涨停原因详情(来自板块排行)",
 }
 
 
@@ -111,6 +125,11 @@ def code_to_symbol(code: str) -> str:
     if code.startswith(("4", "8")):
         return f"{code}.BJ"
     return code  # fallback
+
+
+def symbol_to_code(symbol: str) -> str:
+    """'CCCCCC.SH' \u2192 'CCCCCC'\uff086 \u4f4d\u6570\u5b57\u4ee3\u7801\uff09"""
+    return symbol.split(".")[0]
 
 
 def parse_high_days(s: str | None) -> int:
@@ -218,8 +237,94 @@ def fetch_all_pages(url_template: str, trade_date: str) -> dict:
 
 # ── 数据转换 ─────────────────────────────────────────────
 
-def transform_limit_up(raw: dict) -> tuple[list[dict], dict[str, int]]:
-    """转换涨停板原始数据 → (items, streak_distribution)。"""
+def _fetch_json(url: str, headers: dict[str, str] | None = None) -> Any:
+    """\u8bf7\u6c42\u5355\u6b21 JSON \u63a5\u53e3\uff0c\u8fd4\u56de\u5b8c\u6574 body\uff08\u4e0d\u505a .get('data') \u63d0\u53d6\uff09"""
+    req = urllib.request.Request(url, headers=headers or {
+        "User-Agent": UA,
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode(errors='replace')[:300]}")
+    except urllib.error.URLError as e:
+        raise RuntimeError(f"\u8fde\u63a5\u5931\u8d25: {e.reason}")
+    except TimeoutError:
+        raise RuntimeError(f"\u8bf7\u6c42\u8d85\u65f6 ({TIMEOUT}s)")
+
+
+# \u2500\u2500 \u65b0\u589e API\uff1a\u677f\u5757\u5206\u7ec4 & \u677f\u5757\u6392\u884c \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+def fetch_board_group_data(trade_date: str) -> dict[str, str]:
+    """\u83b7\u53d6\u6da8\u505c\u7b80\u56fe\u677f\u5757\u5206\u7ec4\u6570\u636e \u2192 {6\u4f4d\u4ee3\u7801: \u6982\u5ff5\u540d\u79f0}"""
+    url = BOARD_GROUP_URL.format(date=trade_date.replace("-", ""))
+    headers = {
+        "User-Agent": UA,
+        "Origin": "https://data.10jqka.com.cn",
+        "x-requested-with": "com.hexin.plat.android",
+        "Referer": "https://data.10jqka.com.cn/",
+    }
+    body = _fetch_json(url, headers=headers)
+    if body.get("status_code") != 0:
+        print(f"  \u26a0 board_group_data API \u8fd4\u56de\u5f02\u5e38: {body.get('status_msg')}", file=sys.stderr)
+        return {}
+
+    code_to_concept: dict[str, str] = {}
+    tab_list = (body.get("data") or {}).get("tab_list") or []
+    for tab in tab_list:
+        concept_name = tab.get("tab_name", "")
+        board_list = tab.get("board_list") or []
+        for board in board_list:
+            tab_data = board.get("tab_data") or []
+            for item in tab_data:
+                stock_code = str(item.get("stock_code", "")).strip()
+                if stock_code:
+                    if stock_code in code_to_concept:
+                        existing = code_to_concept[stock_code]
+                        if concept_name not in existing:
+                            code_to_concept[stock_code] = f"{existing},{concept_name}"
+                    else:
+                        code_to_concept[stock_code] = concept_name
+    return code_to_concept
+
+
+def fetch_block_top_data(trade_date: str) -> dict[str, str]:
+    """\u83b7\u53d6\u677f\u5757\u6da8\u505c\u6392\u884c\u6570\u636e \u2192 {6\u4f4d\u4ee3\u7801: reason_info}"""
+    url = BLOCK_TOP_URL.format(date=trade_date.replace("-", ""))
+    headers = {
+        "User-Agent": UA,
+        "Referer": "https://data.10jqka.com.cn/mobile/limitup/v2/index.html",
+        "x-requested-with": "com.hexin.plat.android",
+    }
+    body = _fetch_json(url, headers=headers)
+    if body.get("status_code") != 0:
+        print(f"  \u26a0 block_top API \u8fd4\u56de\u5f02\u5e38: {body.get('status_msg')}", file=sys.stderr)
+        return {}
+
+    code_to_reason: dict[str, str] = {}
+    concepts = body.get("data") or []
+    for concept in concepts:
+        stock_list = concept.get("stock_list") or []
+        for item in stock_list:
+            stock_code = str(item.get("code", "")).strip()
+            reason_info = item.get("reason_info")
+            if stock_code and reason_info:
+                if stock_code not in code_to_reason:
+                    code_to_reason[stock_code] = reason_info
+    return code_to_reason
+
+
+# \u2500\u2500 \u6570\u636e\u8f6c\u6362 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+def transform_limit_up(
+    raw: dict,
+    code_to_concept: dict[str, str] | None = None,
+    code_to_reason: dict[str, str] | None = None,
+) -> tuple[list[dict], dict[str, int]]:
+    """\u8f6c\u6362\u6da8\u505c\u677f\u539f\u59cb\u6570\u636e \u2192 (items, streak_distribution)\u3002
+
+    \u53ef\u9009\u6ce8\u5165 concept \u548c reason_info \u5b57\u6bb5\u3002
+    """
     items: list[dict] = []
     streak_counter: dict[int, int] = {}
 
@@ -231,8 +336,12 @@ def transform_limit_up(raw: dict) -> tuple[list[dict], dict[str, int]]:
         high_days_raw = it.get("high_days")
         consecutive_boards = parse_high_days(high_days_raw)
 
+        code_str = str(code)
+        concept = (code_to_concept or {}).get(code_str)
+        reason_info = (code_to_reason or {}).get(code_str)
+
         item = {
-            "symbol":              code_to_symbol(str(code)),
+            "symbol":              code_to_symbol(code_str),
             "name":                it.get("name"),
             "first_limit_up_time": to_int(it.get("first_limit_up_time")),
             "last_limit_up_time":  to_int(it.get("last_limit_up_time")),
@@ -244,6 +353,8 @@ def transform_limit_up(raw: dict) -> tuple[list[dict], dict[str, int]]:
             "open_num":            int(it.get("open_num") or 0),
             "is_again_limit":      int(bool(it.get("is_again_limit"))),
             "consecutive_boards":  consecutive_boards,
+            "concept":             concept,
+            "reason_info":         reason_info,
         }
         items.append(item)
         streak_counter[consecutive_boards] = streak_counter.get(consecutive_boards, 0) + 1
@@ -327,7 +438,13 @@ def fetch_all(target_date: str) -> dict:
     """获取指定日期的涨跌停数据，返回完整 JSON 结构。"""
     print(f"→ 获取涨停板数据 (date={target_date})...", file=sys.stderr)
     up_raw = fetch_all_pages(LIMIT_UP_URL, target_date)
-    up_items, streak_dist = transform_limit_up(up_raw)
+    # \u83b7\u53d6\u6982\u5ff5\u5f52\u5c5e\u548c\u6da8\u505c\u539f\u56e0\u8be6\u60c5
+    print(f"\u2192 \u83b7\u53d6\u677f\u5757\u5206\u7ec4\u6570\u636e (date={target_date})...", file=sys.stderr)
+    code_to_concept = fetch_board_group_data(target_date)
+    print(f"\u2192 \u83b7\u53d6\u677f\u5757\u6da8\u505c\u6392\u884c\u6570\u636e (date={target_date})...", file=sys.stderr)
+    code_to_reason = fetch_block_top_data(target_date)
+
+    up_items, streak_dist = transform_limit_up(up_raw, code_to_concept, code_to_reason)
 
     print(f"→ 获取跌停板数据 (date={target_date})...", file=sys.stderr)
     down_error: str | None = None

@@ -7,8 +7,8 @@
   3. 匹配 concepts_all.json，为每只股票产出 real_concepts
   4. 输出 limit_up_中间/{date}_涨停概念分组_中间.json
 
-LLM 后续读取中间 JSON，分析 real_concepts + primary_concept + concepts 三个字段，
-结合 热门概念.json，得出最终的 sub_concept 和 note。
+LLM 后续读取中间 JSON，分析 real_concepts + primary_concept + concepts + market_concept 四个字段，
+结合 reason_info 和 热门概念.json，得出最终的 sub_concept 和 note。
 """
 from __future__ import annotations
 
@@ -207,6 +207,8 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
             "tags_signal": tags_signal,
             "tags_noise": tags_noise,
             "is_noise_only": len(tags_signal) == 0 and len(tags) > 0,
+            "market_concept": item.get("concept"),
+            "reason_info": item.get("reason_info"),
         }
         all_signal_tags.extend(tags_signal)
         if code not in stock_order:
@@ -233,6 +235,8 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
             "tags_signal": [],
             "tags_noise": [],
             "is_noise_only": False,
+            "market_concept": None,
+            "reason_info": None,
         }
         if code not in stock_order:
             stock_order.append(code)
@@ -285,6 +289,8 @@ def process_one(filepath: Path, ref_map: dict[str, list[dict]]) -> dict | None:
             "concepts": tags_signal,
             "primary_concept": primary,
             "real_concepts": real_concepts,
+            "market_concept": info.get("market_concept"),
+            "reason_info": info.get("reason_info"),
             "change_rate": info["change_rate"], "type": "跌停" if is_limit_down else "涨停",
             "first_limit_up_time": info["first_limit_up_time"],
             "high_days": info["high_days"],
