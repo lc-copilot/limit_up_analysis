@@ -29,7 +29,7 @@ function generateTemplate(stock, midData) {
     const {
         symbol = "",
         name = "",
-        note = "",
+        memberships = [],
     } = stock;
 
     const mid = midData.find((s) => s.code === symbol || s.code === symbol);
@@ -41,6 +41,24 @@ function generateTemplate(stock, midData) {
     const currencyValue = mid?.currency_value || stock.currency_value || "";
 
     const moneyStr = currencyValue ? `${(currencyValue / 1e8).toFixed(1)}亿` : "—";
+
+    // 从 memberships 中提取所有备注（新格式）
+    // 兼容旧格式：如果 stock 有直接的 note/sub_concept 字段也展示
+    const notes = [];
+    if (memberships.length > 0) {
+        for (const m of memberships) {
+            const path = m.sub_concept ? m.sub_concept.join(" → ") : "";
+            if (m.note) {
+                notes.push(`**${path}**：${m.note}`);
+            } else if (path) {
+                notes.push(`**${path}**`);
+            }
+        }
+    } else if (stock.note) {
+        // 旧格式兼容
+        const path = stock.sub_concept ? stock.sub_concept.join(" → ") : "";
+        notes.push(`${path ? `**${path}**：` : ""}${stock.note}`);
+    }
 
     return `
 
@@ -54,7 +72,7 @@ function generateTemplate(stock, midData) {
 
 **📊 市场标签：** ${rawConcepts.length > 0 ? rawConcepts.join("、") : "暂无"}
 
-${note ? `**📝 备注：** ${note}` : ""}
+${notes.length > 0 ? `**📝 概念分类与备注：**\n\n${notes.join("\n\n")}` : ""}
 
 ### 3️⃣ 参考资料的可靠性要求
 
@@ -106,12 +124,8 @@ function main() {
         `${dateStr}.json`
     );
     const analysisData = JSON.parse(fs.readFileSync(analysisPath, "utf-8"));
-    // 支持新旧两种格式：新格式有 limit_up_stocks/limit_down_stocks，旧格式有 stocks
-    const stocks = [
-        ...(analysisData.limit_up_stocks || []),
-        ...(analysisData.limit_down_stocks || []),
-        ...(analysisData.stocks || []),
-    ];
+    // 新格式：stocks 数组，每只股票一个条目，包含 memberships 数组
+    const stocks = analysisData.stocks || [];
 
     if (stocks.length === 0) {
         console.error(`❌ ${analysisPath} 中没有股票数据`);
@@ -135,35 +149,21 @@ function main() {
         console.warn(`  ⚠ 中间数据不存在，原始 concepts 将为空: ${midPath}`);
     }
 
-    // 按 symbol 去重分组（同一个股票可能有多条概念记录，合并到一个调研段落）
-    const stockGroups = new Map();
-    for (const stock of stocks) {
-        const key = stock.symbol;
-        if (!stockGroups.has(key)) {
-            stockGroups.set(key, []);
-        }
-        stockGroups.get(key).push(stock);
-    }
-
-    // 重新生成：一个股票一个段落（合并多条概念记录）
+    // 新格式：每只股票已是单一条目（memberships 数组承载多概念），直接遍历
     const mergedSections = [];
-    for (const [sym, entries] of stockGroups) {
-        const section = generateTemplate(
-            entries[0],
-            midStocks
-        );
+    for (const stock of stocks) {
+        const section = generateTemplate(stock, midStocks);
         mergedSections.push(section);
     }
 
     // 构建完整内容
-    const total = stockGroups.size;
-    const refCount = stocks.filter((s) => s._source === "reference").length;
-    const aiCount = stocks.filter((s) => s._source !== "reference").length;
+    const total = stocks.length;
+    const totalMemberships = stocks.reduce((sum, s) => sum + (s.memberships || []).length, 0);
 
     const header = `# 📊 ${dateStr} 涨停概念分组 — 调研模板
 
 生成时间: ${new Date().toLocaleString("zh-CN")}
-股票总数: ${total} 只（参考匹配 ${refCount} 只，AI 补充 ${aiCount} 只）
+股票总数: ${total} 只，概念记录总数: ${totalMemberships} 条
 
 ---
 
@@ -181,7 +181,7 @@ function main() {
 
     console.log(`\n✅ 调研模板已生成`);
     console.log(`   输出: ${outPath}`);
-    console.log(`   股票: ${total} 只（参考 ${refCount} + AI ${aiCount}）`);
+    console.log(`   股票: ${total} 只，概念记录: ${totalMemberships} 条`);
     console.log(`   大小: ${(Buffer.byteLength(fullContent, "utf-8") / 1024).toFixed(0)} KB`);
 
     if (openAfter) {

@@ -1,0 +1,703 @@
+{
+  "_meta": {
+    "date": "2026-07-03",
+    "total_stocks": 123,
+    "group_count": 5,
+    "stage": "分组完成 — 待子 LLM 分析",
+    "analysis_instruction": "## 分析任务\n\n请对以下每只股票，分析得出最终的 sub_concept 和 note。\n\n### 输入字段说明\n\n| 字段 | 说明 |\n|---|---|\n| `concepts` | 同花顺信号标签，市场给它的所有标签 |\n| `primary_concept` | 同花顺信号标签，市场给它的主要标签（频次最高） |\n| `real_concepts` | concepts_all.json 中已有的概念分类（可能为空） |\n\n### 判断逻辑（按优先级）\n\n1. **real_concepts 不为空** → 优先使用，判断是否仍然有效\n2. **热门概念匹配** → 如果该股票与热门概念相关，优先使用热门概念的层级\n3. **concepts / primary_concept 有线索** → 结合 AI 知识判断\n4. **以上都没有** → 用 AI 知识自行判断，仍不确定则填 [\"未知\"]\n\n### 输出格式\n\n每只股票输出一条记录（多概念时使用 memberships 数组），格式如下：\n\n```json\n{\n  \"symbol\": \"股票代码\",\n  \"name\": \"股票名称\",\n  \"type\": \"limit_up\",\n  \"memberships\": [\n    {\n      \"sub_concept\": [\"一级\", \"二级\", \"(三级)\"],\n      \"strength\": 5,\n      \"note\": \"概念相关说明，要写具体\"\n    }\n  ]\n}\n```\n\n### 规则\n\n- sub_concept 至少 2 级，最多 3 级\n- note 要写具体，说明为什么属于这个分类\n- strength 全部填 5\n- 一只股票可能有多个概念 → 在 memberships 数组中添加多条\n- type: \"limit_up\" 或 \"limit_down\"",
+    "hot_concepts": [],
+    "group": 4,
+    "group_total": 25
+  },
+  "stocks": [
+    {
+      "code": "002270.SZ",
+      "name": "华明装备",
+      "concepts": [
+        "特高压",
+        "变压器",
+        "机器人概念"
+      ],
+      "primary_concept": "机器人概念",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电力设备",
+            "变压器"
+          ],
+          "note": "变压器分接开关绝对龙头，国内市占率超80%，变压器核心组件，受益全球变压器扩产"
+        }
+      ],
+      "change_rate": 9.9945,
+      "type": "涨停",
+      "first_limit_up_time": 1783045347,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.3392,
+      "currency_value": 18049691000.0,
+      "order_amount": 77486999.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603596.SH",
+      "name": "伯特利",
+      "concepts": [
+        "人形机器人",
+        "EMB量产",
+        "智能底盘"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "自动驾驶",
+            "线控底盘"
+          ],
+          "note": "线控制动（WCBS）龙头，EPB+线控刹车+IBS，自动驾驶执行层核心标的，国产替代先锋"
+        }
+      ],
+      "change_rate": 9.9841,
+      "type": "涨停",
+      "first_limit_up_time": 1783045453,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.5573,
+      "currency_value": 24819793000.0,
+      "order_amount": 48477694.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002090.SZ",
+      "name": "金智科技",
+      "concepts": [
+        "电气自动化",
+        "智慧能源"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 9.9771,
+      "type": "涨停",
+      "first_limit_up_time": 1783045704,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.1178,
+      "currency_value": 3818629500.0,
+      "order_amount": 65815249.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002472.SZ",
+      "name": "双环传动",
+      "concepts": [
+        "机器人",
+        "减速器",
+        "新能源齿轮"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "减速器"
+          ],
+          "note": "RV减速器国内第一，打破日本纳博特斯克垄断，同时是特斯拉电动车齿轮供应商"
+        },
+        {
+          "sub_concept": [
+            "机器人",
+            "特斯拉机器人概念"
+          ],
+          "note": "RV减速器国内第一，打破日本纳博特斯克垄断，同时是特斯拉电动车齿轮供应商"
+        }
+      ],
+      "change_rate": 9.9906,
+      "type": "涨停",
+      "first_limit_up_time": 1783045797,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 9.9708,
+      "currency_value": 35191468000.0,
+      "order_amount": 221841980.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002353.SZ",
+      "name": "杰瑞股份",
+      "concepts": [
+        "燃气轮机",
+        "北美数据中心",
+        "油气装备"
+      ],
+      "primary_concept": "燃气轮机",
+      "real_concepts": [],
+      "change_rate": 10.0014,
+      "type": "涨停",
+      "first_limit_up_time": 1783046664,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.3629,
+      "currency_value": 111575640000.0,
+      "order_amount": 84756651.0,
+      "tags_noise": []
+    },
+    {
+      "code": "300129.SZ",
+      "name": "泰胜风能",
+      "concepts": [
+        "商业航天",
+        "风电装备"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "风电设备",
+            "塔筒与基础结构"
+          ],
+          "note": "塔筒，陆上+海上风电塔筒均有布局，出口经验丰富"
+        }
+      ],
+      "change_rate": 19.9774,
+      "type": "涨停",
+      "first_limit_up_time": 1783047033,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 11.4692,
+      "currency_value": 7639889300.0,
+      "order_amount": 41020490.0,
+      "tags_noise": [
+        {
+          "tag": "广州国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "002623.SZ",
+      "name": "亚玛顿",
+      "concepts": [
+        "玻璃基板",
+        "特斯拉概念",
+        "光伏玻璃",
+        "钙钛矿组件"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "光伏",
+            "光伏辅材"
+          ],
+          "note": "光伏玻璃+超薄玻璃，BIPV用光伏玻璃差异化竞争，轻质化光伏组件玻璃领先"
+        }
+      ],
+      "change_rate": 10.0064,
+      "type": "涨停",
+      "first_limit_up_time": 1783047474,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.8324,
+      "currency_value": 3303709800.0,
+      "order_amount": 34889960.0,
+      "tags_noise": []
+    },
+    {
+      "code": "605305.SH",
+      "name": "中际联合",
+      "concepts": [
+        "风电",
+        "储能消防",
+        "股东户数减少"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1783047548,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.7484,
+      "currency_value": 9771669600.0,
+      "order_amount": 2215362.4,
+      "tags_noise": [
+        {
+          "tag": "一季报增长",
+          "category": "财务业绩",
+          "matched": "一季报增长"
+        }
+      ]
+    },
+    {
+      "code": "603051.SH",
+      "name": "鹿山新材",
+      "concepts": [
+        "电子皮肤",
+        "人形机器人",
+        "太空光伏"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "光伏",
+            "光伏辅材"
+          ],
+          "note": "热熔胶膜+功能性背板差异化竞争，毛利率高于行业平均，POE胶膜产品线布局中"
+        }
+      ],
+      "change_rate": 9.99,
+      "type": "涨停",
+      "first_limit_up_time": 1783047754,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.811,
+      "currency_value": 3541376800.0,
+      "order_amount": 54776315.0,
+      "tags_noise": [
+        {
+          "tag": "股权激励",
+          "category": "股权事件",
+          "matched": "股权激励"
+        }
+      ]
+    },
+    {
+      "code": "002141.SZ",
+      "name": "贤丰控股",
+      "concepts": [
+        "覆铜板",
+        "PCB概念",
+        "盐湖提锂参股"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "PCB与载板",
+            "覆铜板"
+          ],
+          "note": "2025 年覆铜板营收占比 64.81% 带动扭亏；子公司高硕航宇年产能 720 万张，产品含无铅无卤 FR-4，适配 AI 服务器 PCB；2026 年产线满产、订单充足"
+        }
+      ],
+      "change_rate": 10.0642,
+      "type": "涨停",
+      "first_limit_up_time": 1783048038,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 17.7821,
+      "currency_value": 5309290000.0,
+      "order_amount": 7408796.0,
+      "tags_noise": []
+    },
+    {
+      "code": "001400.SZ",
+      "name": "江顺科技",
+      "concepts": [
+        "3D打印",
+        "商业航天",
+        "液冷服务器",
+        "铝挤压模具"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "商业航天",
+            "航天零部件"
+          ],
+          "note": "铝挤压模具龙头，3D打印+商业航天+液冷服务器多概念叠加，首板涨停"
+        }
+      ],
+      "change_rate": 9.9974,
+      "type": "涨停",
+      "first_limit_up_time": 1783048092,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 11.3606,
+      "currency_value": 5788646100.0,
+      "order_amount": 26439344.0,
+      "tags_noise": []
+    },
+    {
+      "code": "001268.SZ",
+      "name": "联合精密",
+      "concepts": [
+        "成飞概念",
+        "航空精密零部件",
+        "拟定增"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "精密结构件"
+          ],
+          "note": "精密机械零部件制造商，产品含压缩机零部件/汽车零部件/工业机器人结构件，服务于家电/汽车/工业自动化三大下游领域"
+        }
+      ],
+      "change_rate": 9.9944,
+      "type": "涨停",
+      "first_limit_up_time": 1783048329,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.9473,
+      "currency_value": 2666299800.0,
+      "order_amount": 44141396.0,
+      "tags_noise": []
+    },
+    {
+      "code": "600769.SH",
+      "name": "祥龙电业",
+      "concepts": [
+        "存算基地",
+        "供水"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1783048627,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 7.8494,
+      "currency_value": 8167003400.0,
+      "order_amount": 48876476.0,
+      "tags_noise": [
+        {
+          "tag": "武汉国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "002664.SZ",
+      "name": "信质集团",
+      "concepts": [
+        "人形机器人",
+        "低空经济",
+        "新能源驱动电机"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "电机"
+          ],
+          "note": "新能源汽车驱动电机定转子铁芯龙头，人形机器人+低空经济为新方向，电机铁芯技术向机器人延伸"
+        }
+      ],
+      "change_rate": 10.0166,
+      "type": "涨停",
+      "first_limit_up_time": 1783048725,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.0532,
+      "currency_value": 8003212600.0,
+      "order_amount": 22787092.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603338.SH",
+      "name": "浙江鼎力",
+      "concepts": [
+        "机器人",
+        "电动化",
+        "世界杯概念"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "工业机器人"
+          ],
+          "note": "公司是全球高空作业平台龙头制造商，产品涵盖剪叉式、臂式、桅柱式等全系列。公司在智能制造工厂中大量应用工业机器人进行自动化焊接、装配和物料搬运，属于机器人技术在高端制造中的应用场景。"
+        }
+      ],
+      "change_rate": 10.0064,
+      "type": "涨停",
+      "first_limit_up_time": 1783049011,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 3.8719,
+      "currency_value": 26162995000.0,
+      "order_amount": 29529405.0,
+      "tags_noise": []
+    },
+    {
+      "code": "600143.SH",
+      "name": "金发科技",
+      "concepts": [
+        "间接持股宇树科技",
+        "改性塑料",
+        "机器人材料"
+      ],
+      "primary_concept": "间接持股宇树科技",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "PEEK材料"
+          ],
+          "note": "改性塑料国内龙头，布局PEEK+碳纤维/玻纤改性复合材料，满足机器人结构件高性能需求"
+        },
+        {
+          "sub_concept": [
+            "机器人",
+            "宇树科技概念"
+          ],
+          "note": "改性塑料国内龙头，布局PEEK+碳纤维/玻纤改性复合材料，满足机器人结构件高性能需求"
+        }
+      ],
+      "change_rate": 10.0259,
+      "type": "涨停",
+      "first_limit_up_time": 1783049204,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.6049,
+      "currency_value": 44818391000.0,
+      "order_amount": 114874109.0,
+      "tags_noise": []
+    },
+    {
+      "code": "300985.SZ",
+      "name": "致远新能",
+      "concepts": [
+        "算力",
+        "车载LNG供气系统",
+        "氢能"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 20.0048,
+      "type": "涨停",
+      "first_limit_up_time": 1783054899,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.3111,
+      "currency_value": 9264074900.0,
+      "order_amount": 59175000.0,
+      "tags_noise": []
+    },
+    {
+      "code": "605255.SH",
+      "name": "天普股份",
+      "concepts": [
+        "中昊芯英入主",
+        "澄清借壳",
+        "汽车管路"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "半导体",
+            "数字芯片",
+            "CPU/GPU/算力芯片"
+          ],
+          "note": "中昊芯英（AI芯片公司）入主，汽车管路为传统主业，AI芯片注入带来价值重估预期，多次风险提示"
+        }
+      ],
+      "change_rate": 9.997,
+      "type": "涨停",
+      "first_limit_up_time": 1783054912,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 1.3855,
+      "currency_value": 9958121600.0,
+      "order_amount": 883813.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002283.SZ",
+      "name": "天润工业",
+      "concepts": [
+        "机器人",
+        "大缸径曲轴",
+        "重卡曲轴龙头"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "AI电源"
+          ],
+          "note": ""
+        }
+      ],
+      "change_rate": 9.9893,
+      "type": "涨停",
+      "first_limit_up_time": 1783054953,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 3.5727,
+      "currency_value": 10268943700.0,
+      "order_amount": 86061548.0,
+      "tags_noise": []
+    },
+    {
+      "code": "600841.SH",
+      "name": "动力新科",
+      "concepts": [
+        "数据中心"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1783054962,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.1955,
+      "currency_value": 6998694300.0,
+      "order_amount": 32990467.0,
+      "tags_noise": [
+        {
+          "tag": "一季报扭亏",
+          "category": "财务业绩",
+          "matched": "一季报扭亏"
+        },
+        {
+          "tag": "上海国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "603726.SH",
+      "name": "朗迪集团",
+      "concepts": [
+        "间接投资长鑫科技、甬矽电子",
+        "机器人关节",
+        "空调风叶"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "存储芯片",
+            "长鑫存储概念"
+          ],
+          "note": "空调风叶主业，间接投资长鑫科技（存储芯片）和甬矽电子（先进封装），机器人关节为新方向"
+        }
+      ],
+      "change_rate": 9.9907,
+      "type": "涨停",
+      "first_limit_up_time": 1783054962,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.8601,
+      "currency_value": 6547834800.0,
+      "order_amount": 49758187.0,
+      "tags_noise": []
+    },
+    {
+      "code": "003028.SZ",
+      "name": "振邦智能",
+      "concepts": [
+        "机器人",
+        "智能控制器",
+        "小米汽车"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 10.0134,
+      "type": "涨停",
+      "first_limit_up_time": 1783054986,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.8183,
+      "currency_value": 1735945000.0,
+      "order_amount": 18406065.0,
+      "tags_noise": []
+    },
+    {
+      "code": "300580.SZ",
+      "name": "贝斯特",
+      "concepts": [
+        "人形机器人",
+        "工业母机"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "丝杠"
+          ],
+          "note": "通过子公司宇华精机布局行星滚柱丝杠，已出样送多家客户验证，部分进入小批量交付，规划产能10万套/年，可用于灵巧手/线性关节/腿部"
+        }
+      ],
+      "change_rate": 20.0185,
+      "type": "涨停",
+      "first_limit_up_time": 1783055061,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.2755,
+      "currency_value": 12268500600.0,
+      "order_amount": 36403708.0,
+      "tags_noise": []
+    },
+    {
+      "code": "003021.SZ",
+      "name": "兆威机电",
+      "concepts": [
+        "人形机器人",
+        "灵巧手",
+        "精密驱动",
+        "H股回购"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "灵巧手"
+          ],
+          "note": "微型传动系统龙头，灵巧手手指关节核心供应商，国内少数具备灵巧手微型减速传动能力"
+        },
+        {
+          "sub_concept": [
+            "机器人",
+            "特斯拉机器人概念"
+          ],
+          "note": "微型传动系统龙头，灵巧手手指关节核心供应商，国内少数具备灵巧手微型减速传动能力"
+        }
+      ],
+      "change_rate": 9.9956,
+      "type": "涨停",
+      "first_limit_up_time": 1783055073,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.6338,
+      "currency_value": 20904489000.0,
+      "order_amount": 49746614.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603915.SH",
+      "name": "国茂股份",
+      "concepts": [
+        "机器人",
+        "精密减速器",
+        "Q1业绩增长"
+      ],
+      "primary_concept": "机器人",
+      "real_concepts": [],
+      "change_rate": 10.0206,
+      "type": "涨停",
+      "first_limit_up_time": 1783055334,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.3409,
+      "currency_value": 10525818700.0,
+      "order_amount": 51566907.0,
+      "tags_noise": []
+    }
+  ]
+}

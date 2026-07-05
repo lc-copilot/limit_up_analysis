@@ -97,9 +97,9 @@ def _is_noise(tag: str) -> dict | None:
 def load_reference() -> dict[str, list[dict]]:
     """加载 concepts_all.json，构建 symbol → [{sub_concept, note, name}] 映射。
 
-    concepts_all.json 格式:
-      [{"symbol":"...", "name":"...", "note":"...", "strength":5, "sub_concept":["一级","二级"]}]
-    sub_concept 数组直接就是概念层级路径。
+    concepts_all.json 新格式:
+      [{"symbol":"...", "name":"...", "memberships":[{"sub_concept":["一级","二级"], "strength":5, "note":"..."}]}]
+    memberships 数组中的每个元素包含 sub_concept 层级路径。
     """
     ref_map: dict[str, list[dict]] = {}
 
@@ -120,17 +120,21 @@ def load_reference() -> dict[str, list[dict]]:
         sym = item.get("symbol", "")
         if not sym:
             continue
-        sc = item.get("sub_concept", [])
-        if not sc or not isinstance(sc, list):
+        memberships = item.get("memberships", [])
+        if not memberships or not isinstance(memberships, list):
             continue
 
         if sym not in ref_map:
             ref_map[sym] = []
-        ref_map[sym].append({
-            "sub_concept": sc.copy(),
-            "note": item.get("note", ""),
-            "name": item.get("name", ""),
-        })
+        for m in memberships:
+            sc = m.get("sub_concept", [])
+            if not sc or not isinstance(sc, list):
+                continue
+            ref_map[sym].append({
+                "sub_concept": sc.copy(),
+                "note": m.get("note", ""),
+                "name": item.get("name", ""),
+            })
 
     return ref_map
 

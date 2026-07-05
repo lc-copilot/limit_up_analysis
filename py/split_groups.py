@@ -47,16 +47,20 @@ ANALYSIS_INSTRUCTION = """
 
 ### 输出格式
 
-每只股票输出一条或多条记录（多概念时多条），格式如下：
+每只股票输出一条记录（多概念时使用 memberships 数组），格式如下：
 
 ```json
 {
   "symbol": "股票代码",
   "name": "股票名称",
-  "note": "概念相关说明，要写具体",
-  "strength": 5,
-  "sub_concept": ["一级", "二级", "(三级)"],
-  "type": "limit_up"
+  "type": "limit_up",
+  "memberships": [
+    {
+      "sub_concept": ["一级", "二级", "(三级)"],
+      "strength": 5,
+      "note": "概念相关说明，要写具体"
+    }
+  ]
 }
 ```
 
@@ -65,7 +69,7 @@ ANALYSIS_INSTRUCTION = """
 - sub_concept 至少 2 级，最多 3 级
 - note 要写具体，说明为什么属于这个分类
 - strength 全部填 5
-- 一只股票可能有多个概念 → 输出多条记录
+- 一只股票可能有多个概念 → 在 memberships 数组中添加多条
 - type: "limit_up" 或 "limit_down"
 """
 

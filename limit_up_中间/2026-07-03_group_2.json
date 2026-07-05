@@ -1,0 +1,764 @@
+{
+  "_meta": {
+    "date": "2026-07-03",
+    "total_stocks": 123,
+    "group_count": 5,
+    "stage": "分组完成 — 待子 LLM 分析",
+    "analysis_instruction": "## 分析任务\n\n请对以下每只股票，分析得出最终的 sub_concept 和 note。\n\n### 输入字段说明\n\n| 字段 | 说明 |\n|---|---|\n| `concepts` | 同花顺信号标签，市场给它的所有标签 |\n| `primary_concept` | 同花顺信号标签，市场给它的主要标签（频次最高） |\n| `real_concepts` | concepts_all.json 中已有的概念分类（可能为空） |\n\n### 判断逻辑（按优先级）\n\n1. **real_concepts 不为空** → 优先使用，判断是否仍然有效\n2. **热门概念匹配** → 如果该股票与热门概念相关，优先使用热门概念的层级\n3. **concepts / primary_concept 有线索** → 结合 AI 知识判断\n4. **以上都没有** → 用 AI 知识自行判断，仍不确定则填 [\"未知\"]\n\n### 输出格式\n\n每只股票输出一条记录（多概念时使用 memberships 数组），格式如下：\n\n```json\n{\n  \"symbol\": \"股票代码\",\n  \"name\": \"股票名称\",\n  \"type\": \"limit_up\",\n  \"memberships\": [\n    {\n      \"sub_concept\": [\"一级\", \"二级\", \"(三级)\"],\n      \"strength\": 5,\n      \"note\": \"概念相关说明，要写具体\"\n    }\n  ]\n}\n```\n\n### 规则\n\n- sub_concept 至少 2 级，最多 3 级\n- note 要写具体，说明为什么属于这个分类\n- strength 全部填 5\n- 一只股票可能有多个概念 → 在 memberships 数组中添加多条\n- type: \"limit_up\" 或 \"limit_down\"",
+    "hot_concepts": [],
+    "group": 2,
+    "group_total": 25
+  },
+  "stocks": [
+    {
+      "code": "603137.SH",
+      "name": "恒尚节能",
+      "concepts": [
+        "拟收购存储公司",
+        "复牌",
+        "建筑幕墙"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "存储芯片",
+            "半导体投资"
+          ],
+          "note": "公司拟收购存储芯片相关标的资产，通过外延并购方式切入半导体存储领域，从传统建筑幕墙主业向高科技领域跨界转型，收购完成后将形成建材+存储双主业格局"
+        },
+        {
+          "sub_concept": [
+            "家居概念"
+          ],
+          "note": "建筑幕墙与节能门窗系统解决方案提供商，主营玻璃幕墙、石材幕墙、金属幕墙及节能铝合金门窗的设计施工，受益于绿色建筑和建筑节能政策推动"
+        }
+      ],
+      "change_rate": 10.0319,
+      "type": "涨停",
+      "first_limit_up_time": 1783041903,
+      "high_days": "4板",
+      "consecutive_boards": 4,
+      "turnover_rate": 0.331,
+      "currency_value": 3150112000.0,
+      "order_amount": 367850540.0,
+      "tags_noise": []
+    },
+    {
+      "code": "600793.SH",
+      "name": "宜宾纸业",
+      "concepts": [
+        "子公司购买资产",
+        "醋酸纤维素",
+        "竹基新材料"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "电池",
+            "固态电池"
+          ],
+          "note": "醋酸纤维素是以天然纤维素为原料经化学改性制得的高分子材料，广泛应用于香烟滤嘴丝束、液晶显示偏光片TAC保护膜、涂料和纺织纤维等领域"
+        }
+      ],
+      "change_rate": 10.0344,
+      "type": "涨停",
+      "first_limit_up_time": 1783042201,
+      "high_days": "3板",
+      "consecutive_boards": 3,
+      "turnover_rate": 2.0671,
+      "currency_value": 2832233100.0,
+      "order_amount": 64760770.0,
+      "tags_noise": [
+        {
+          "tag": "宜宾国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "603327.SH",
+      "name": "福蓉科技",
+      "concepts": [
+        "2026中报预增",
+        "折叠屏",
+        "苹果概念"
+      ],
+      "primary_concept": "2026中报预增",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "消费电子"
+          ],
+          "note": "消费电子铝制结构件供应商，产品含手机中框/平板外壳/笔记本外壳等，进入华为/苹果供应链，受益消费电子金属化+钛合金/铝合金新工艺趋势"
+        },
+        {
+          "sub_concept": [
+            "消费电子",
+            "折叠屏"
+          ],
+          "note": "折叠屏手机铝制中框/外壳供应商，苹果概念核心标的，消费电子精密结构件"
+        }
+      ],
+      "change_rate": 10.0621,
+      "type": "涨停",
+      "first_limit_up_time": 1783042212,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 1.6207,
+      "currency_value": 9262769900.0,
+      "order_amount": 162182180.0,
+      "tags_noise": [
+        {
+          "tag": "福建国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "000506.SZ",
+      "name": "招金黄金",
+      "concepts": [
+        "黄金"
+      ],
+      "primary_concept": "黄金",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "贵金属",
+            "黄金"
+          ],
+          "note": "黄金采选冶炼企业，纯黄金主业，业绩与金价高度绑定"
+        }
+      ],
+      "change_rate": 9.9921,
+      "type": "涨停",
+      "first_limit_up_time": 1783042251,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 2.917,
+      "currency_value": 12881165500.0,
+      "order_amount": 147919260.0,
+      "tags_noise": [
+        {
+          "tag": "一季报扭亏",
+          "category": "财务业绩",
+          "matched": "一季报扭亏"
+        },
+        {
+          "tag": "国企",
+          "category": "公司属性",
+          "matched": "国企"
+        }
+      ]
+    },
+    {
+      "code": "002292.SZ",
+      "name": "奥飞娱乐",
+      "concepts": [
+        "IP经济",
+        "股份回购"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "消费",
+            "IP经济"
+          ],
+          "note": "超级飞侠、喜羊羊等知名IP，玩具+动漫+授权全产业链"
+        },
+        {
+          "sub_concept": [
+            "育儿",
+            "育儿"
+          ],
+          "note": "超级飞侠、喜羊羊等知名IP，玩具+动漫+授权全产业链"
+        }
+      ],
+      "change_rate": 9.9573,
+      "type": "涨停",
+      "first_limit_up_time": 1783042269,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 5.7712,
+      "currency_value": 7868239300.0,
+      "order_amount": 48271531.0,
+      "tags_noise": [
+        {
+          "tag": "半年报预增",
+          "category": "财务业绩",
+          "matched": "半年报预增"
+        }
+      ]
+    },
+    {
+      "code": "600988.SH",
+      "name": "赤峰黄金",
+      "concepts": [
+        "黄金",
+        "紫金矿业入主"
+      ],
+      "primary_concept": "黄金",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "贵金属",
+            "黄金"
+          ],
+          "note": "民营金矿龙头，海外矿山放量，高成长性，业绩弹性大"
+        }
+      ],
+      "change_rate": 10.0035,
+      "type": "涨停",
+      "first_limit_up_time": 1783042297,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 2.2385,
+      "currency_value": 51963952000.0,
+      "order_amount": 222358380.0,
+      "tags_noise": []
+    },
+    {
+      "code": "000975.SZ",
+      "name": "山金国际",
+      "concepts": [
+        "黄金",
+        "业绩预增"
+      ],
+      "primary_concept": "黄金",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "贵金属",
+            "黄金"
+          ],
+          "note": "低成本金矿运营商，盈利能力突出，矿产金成本行业领先"
+        }
+      ],
+      "change_rate": 9.9778,
+      "type": "涨停",
+      "first_limit_up_time": 1783042302,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.6522,
+      "currency_value": 50061028000.0,
+      "order_amount": 80435328.0,
+      "tags_noise": [
+        {
+          "tag": "山东国资",
+          "category": "公司属性",
+          "matched": "regex"
+        }
+      ]
+    },
+    {
+      "code": "002677.SZ",
+      "name": "浙江美大",
+      "concepts": [
+        "AI厨电",
+        "集成灶龙头",
+        "智能驾驶"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 10.0707,
+      "type": "涨停",
+      "first_limit_up_time": 1783042305,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 0.9665,
+      "currency_value": 3435906400.0,
+      "order_amount": 28719802.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002067.SZ",
+      "name": "景兴纸业",
+      "concepts": [
+        "间接持股宇树科技",
+        "机器人概念",
+        "造纸"
+      ],
+      "primary_concept": "机器人概念",
+      "real_concepts": [],
+      "change_rate": 9.9476,
+      "type": "涨停",
+      "first_limit_up_time": 1783042383,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 4.0055,
+      "currency_value": 5617936200.0,
+      "order_amount": 81350350.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002471.SZ",
+      "name": "中超控股",
+      "concepts": [
+        "商业航天",
+        "高温合金",
+        "定增获批"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [],
+      "change_rate": 9.9662,
+      "type": "涨停",
+      "first_limit_up_time": 1783042383,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 6.9797,
+      "currency_value": 8746256400.0,
+      "order_amount": 88620630.0,
+      "tags_noise": []
+    },
+    {
+      "code": "001317.SZ",
+      "name": "三羊马",
+      "concepts": [
+        "物流",
+        "跨境电商",
+        "小米汽车"
+      ],
+      "primary_concept": "小米汽车",
+      "real_concepts": [],
+      "change_rate": 9.9932,
+      "type": "涨停",
+      "first_limit_up_time": 1783042389,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 4.8432,
+      "currency_value": 4139865300.0,
+      "order_amount": 78834693.0,
+      "tags_noise": []
+    },
+    {
+      "code": "001270.SZ",
+      "name": "铖昌科技",
+      "concepts": [
+        "商业航天",
+        "相控阵T/R芯片"
+      ],
+      "primary_concept": "商业航天",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "军工",
+            "军工电子"
+          ],
+          "note": "相控阵T/R芯片核心供应商，星载/机载/舰载相控阵雷达核心器件，军用相控阵技术壁垒极高"
+        },
+        {
+          "sub_concept": [
+            "商业航天",
+            "卫星制造"
+          ],
+          "note": "相控阵T/R芯片核心供应商，星载/机载/舰载相控阵雷达核心器件，军用相控阵技术壁垒极高"
+        }
+      ],
+      "change_rate": 10.002,
+      "type": "涨停",
+      "first_limit_up_time": 1783042413,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.2664,
+      "currency_value": 33448468000.0,
+      "order_amount": 179923270.0,
+      "tags_noise": [
+        {
+          "tag": "摘帽",
+          "category": "ST变动",
+          "matched": "摘帽"
+        }
+      ]
+    },
+    {
+      "code": "603559.SH",
+      "name": "中通国脉",
+      "concepts": [
+        "通信技术服务"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 9.9889,
+      "type": "涨停",
+      "first_limit_up_time": 1783042432,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 3.6068,
+      "currency_value": 3976654900.0,
+      "order_amount": 26695558.0,
+      "tags_noise": [
+        {
+          "tag": "摘帽",
+          "category": "ST变动",
+          "matched": "摘帽"
+        },
+        {
+          "tag": "扭亏为盈",
+          "category": "财务业绩",
+          "matched": "扭亏为盈"
+        }
+      ]
+    },
+    {
+      "code": "001337.SZ",
+      "name": "四川黄金",
+      "concepts": [
+        "黄金",
+        "金精矿"
+      ],
+      "primary_concept": "黄金",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "贵金属",
+            "黄金"
+          ],
+          "note": "四川甘孜金矿资源，梭罗沟金矿为核心资产，中小市值弹性标的"
+        }
+      ],
+      "change_rate": 10.0107,
+      "type": "涨停",
+      "first_limit_up_time": 1783042434,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.3444,
+      "currency_value": 17308200000.0,
+      "order_amount": 95153890.0,
+      "tags_noise": [
+        {
+          "tag": "国企改革",
+          "category": "公司属性",
+          "matched": "国企改革"
+        }
+      ]
+    },
+    {
+      "code": "002747.SZ",
+      "name": "埃斯顿",
+      "concepts": [
+        "拟收购酷卓",
+        "具身智能",
+        "工业机器人"
+      ],
+      "primary_concept": "具身智能",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "整机制造"
+          ],
+          "note": "国产工业机器人出货量连续8年第一，2026Q1全市场第一，伺服/控制器/减速器自研率超85%，下游绑定宁德/比亚迪/隆基"
+        },
+        {
+          "sub_concept": [
+            "机器人",
+            "物理AI"
+          ],
+          "note": ""
+        }
+      ],
+      "change_rate": 10.0,
+      "type": "涨停",
+      "first_limit_up_time": 1783042485,
+      "high_days": "3板",
+      "consecutive_boards": 3,
+      "turnover_rate": 16.1991,
+      "currency_value": 35028255000.0,
+      "order_amount": 321170940.0,
+      "tags_noise": []
+    },
+    {
+      "code": "000908.SZ",
+      "name": "石药景峰",
+      "concepts": [
+        "石药入主",
+        "创新药",
+        "摘帽更名"
+      ],
+      "primary_concept": "创新药",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "医药",
+            "创新药"
+          ],
+          "note": "聚焦创新型制药，石药集团入主整合，有望借助石药集团研发和渠道资源加速创新药管线推进及商业化"
+        }
+      ],
+      "change_rate": 10.08,
+      "type": "涨停",
+      "first_limit_up_time": 1783042509,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 8.8626,
+      "currency_value": 6052847500.0,
+      "order_amount": 15212987.0,
+      "tags_noise": [
+        {
+          "tag": "一季报扭亏",
+          "category": "财务业绩",
+          "matched": "一季报扭亏"
+        }
+      ]
+    },
+    {
+      "code": "601069.SH",
+      "name": "西部黄金",
+      "concepts": [
+        "黄金"
+      ],
+      "primary_concept": "黄金",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "贵金属",
+            "黄金"
+          ],
+          "note": "新疆地区黄金龙头，西北地区最大黄金采选企业"
+        }
+      ],
+      "change_rate": 10.0212,
+      "type": "涨停",
+      "first_limit_up_time": 1783042515,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.1781,
+      "currency_value": 22987053000.0,
+      "order_amount": 66560458.0,
+      "tags_noise": [
+        {
+          "tag": "新疆国资",
+          "category": "公司属性",
+          "matched": "regex"
+        },
+        {
+          "tag": "一季报增长",
+          "category": "财务业绩",
+          "matched": "一季报增长"
+        }
+      ]
+    },
+    {
+      "code": "605068.SH",
+      "name": "明新旭腾",
+      "concepts": [
+        "人形机器人",
+        "电子皮肤",
+        "汽车内饰"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [],
+      "change_rate": 10.0173,
+      "type": "涨停",
+      "first_limit_up_time": 1783042523,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 1.093,
+      "currency_value": 3099613200.0,
+      "order_amount": 34541325.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002520.SZ",
+      "name": "日发精机",
+      "concepts": [
+        "人形机器人",
+        "数控螺纹磨床",
+        "高端数控机床"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "丝杠"
+          ],
+          "note": "高端数控机床企业，已具备人形机器人行星滚柱丝杠精密螺纹磨削的数控螺纹磨床设备，与贝斯特、恒立液压、舍弗勒等客户合作，是人形机器人核心零部件加工设备供应商"
+        }
+      ],
+      "change_rate": 9.9715,
+      "type": "涨停",
+      "first_limit_up_time": 1783042548,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.351,
+      "currency_value": 5538638100.0,
+      "order_amount": 39858360.0,
+      "tags_noise": []
+    },
+    {
+      "code": "001306.SZ",
+      "name": "夏厦精密",
+      "concepts": [
+        "人形机器人",
+        "行星滚柱丝杠",
+        "精密减速机"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [],
+      "change_rate": 9.993,
+      "type": "涨停",
+      "first_limit_up_time": 1783042587,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 9.7588,
+      "currency_value": 980980760.0,
+      "order_amount": 31277981.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603717.SH",
+      "name": "天域生物",
+      "concepts": [
+        "生猪养殖",
+        "拟设AI公司",
+        "功能性红曲",
+        "光伏"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "猪肉概念"
+          ],
+          "note": "公司主营生猪养殖业务，是集种猪繁育、商品猪养殖、饲料加工于一体的现代化养殖企业，同时布局功能性红曲等生物发酵产品。功能性红曲是一种通过微生物发酵生产的天然功能性原料，具有降血脂等健康功效，广泛应用于保健品和功能性食品领域，是公司在传统养殖业务之外拓展的高附加值生物制品方向。"
+        }
+      ],
+      "change_rate": 10.0601,
+      "type": "涨停",
+      "first_limit_up_time": 1783042598,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 17.9964,
+      "currency_value": 2126771900.0,
+      "order_amount": 2079521.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603211.SH",
+      "name": "晋拓股份",
+      "concepts": [
+        "与宇树科技合资",
+        "人形机器人",
+        "机器人零部件"
+      ],
+      "primary_concept": "人形机器人",
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "机器人",
+            "其他"
+          ],
+          "note": "深耕铝合金压铸10年+，机器人关节壳体/机械臂/底座结构件，客户含UR/越疆/智元/宇树，设子公司专营机器人"
+        },
+        {
+          "sub_concept": [
+            "机器人",
+            "其他零部件"
+          ],
+          "note": "深耕铝合金精密压铸十余年，生产机器人关节壳体、机械臂、底座结构件等，客户涵盖UR、越疆、智元、宇树等机器人厂商，已设立子公司专营机器人压铸零部件业务"
+        }
+      ],
+      "change_rate": 10.0092,
+      "type": "涨停",
+      "first_limit_up_time": 1783042616,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 2.8238,
+      "currency_value": 9768779500.0,
+      "order_amount": 41733528.0,
+      "tags_noise": []
+    },
+    {
+      "code": "002868.SZ",
+      "name": "绿康生化",
+      "concepts": [
+        "动物保健",
+        "剥离光伏"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "医药",
+            "动物保健"
+          ],
+          "note": "主营兽药原料药和动物保健产品，产品包括硫酸黏菌素、杆菌肽锌等兽药，剥离光伏业务后聚焦动物保健主业，受益于养殖业规模化带来的动保需求增长"
+        }
+      ],
+      "change_rate": 10.0042,
+      "type": "涨停",
+      "first_limit_up_time": 1783042662,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 1.5781,
+      "currency_value": 2813116500.0,
+      "order_amount": 75696912.0,
+      "tags_noise": [
+        {
+          "tag": "扭亏为盈",
+          "category": "财务业绩",
+          "matched": "扭亏为盈"
+        }
+      ]
+    },
+    {
+      "code": "301379.SZ",
+      "name": "天山电子",
+      "concepts": [
+        "光学光电子",
+        "存储芯片",
+        "企业级SSD"
+      ],
+      "primary_concept": null,
+      "real_concepts": [
+        {
+          "sub_concept": [
+            "存储芯片",
+            "固态硬盘"
+          ],
+          "note": "公司主营光学光电子显示模组，同时布局企业级SSD存储产品线，涵盖SATA和NVMe接口固态硬盘，存储芯片业务绑定AI算力数据中心存储需求"
+        }
+      ],
+      "change_rate": 20.0,
+      "type": "涨停",
+      "first_limit_up_time": 1783042713,
+      "high_days": "2板",
+      "consecutive_boards": 2,
+      "turnover_rate": 22.7506,
+      "currency_value": 7000780000.0,
+      "order_amount": 32503887.0,
+      "tags_noise": []
+    },
+    {
+      "code": "603713.SH",
+      "name": "密尔克卫",
+      "concepts": [
+        "半导体物流",
+        "化工供应链"
+      ],
+      "primary_concept": null,
+      "real_concepts": [],
+      "change_rate": 9.9958,
+      "type": "涨停",
+      "first_limit_up_time": 1783042721,
+      "high_days": "首板",
+      "consecutive_boards": 1,
+      "turnover_rate": 2.285,
+      "currency_value": 12529027400.0,
+      "order_amount": 30677856.0,
+      "tags_noise": [
+        {
+          "tag": "股权激励",
+          "category": "股权事件",
+          "matched": "股权激励"
+        }
+      ]
+    }
+  ]
+}

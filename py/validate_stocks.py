@@ -38,27 +38,14 @@ def load_output_stocks(date_str: str) -> dict[str, set[str]]:
         sys.exit(1)
 
     data = json.loads(out_path.read_text(encoding="utf-8"))
-
-    # 支持新旧两种格式：新格式有 limit_up_stocks/limit_down_stocks，旧格式有 stocks
     result = {"limit_up": set(), "limit_down": set()}
 
-    if "limit_up_stocks" in data and "limit_down_stocks" in data:
-        # 新格式：涨跌停分开
-        for s in data.get("limit_up_stocks", []):
-            sym = s.get("symbol", s.get("code", ""))
-            if sym:
-                result["limit_up"].add(sym)
-        for s in data.get("limit_down_stocks", []):
-            sym = s.get("symbol", s.get("code", ""))
-            if sym:
-                result["limit_down"].add(sym)
-    else:
-        # 旧格式：stocks 数组 + type 字段
-        for s in data.get("stocks", []):
-            sym = s.get("symbol", "")
-            typ = s.get("type", "")
-            if sym and typ in result:
-                result[typ].add(sym)
+    # stocks 数组，每只股票有 symbol + type 字段
+    for s in data.get("stocks", []):
+        sym = s.get("symbol", "")
+        typ = s.get("type", "")
+        if sym and typ in result:
+            result[typ].add(sym)
     return result
 
 
